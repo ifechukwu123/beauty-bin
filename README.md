@@ -49,7 +49,7 @@ List technologies that will be used in your app, including any libraries to save
 
 ### APIs
 
-List any external sources of data that will be used in your app.
+Not sure yet :confounded:
 
 ### Sitemap
 
@@ -340,7 +340,7 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 - Feature: Wishlist
 
-  - Create GET /wishlist & POST /wishlist
+  - Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
   - Create page to display pages
 
 - Feature: Notifications
