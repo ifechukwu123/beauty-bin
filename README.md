@@ -88,7 +88,7 @@ List any external sources of data that will be used in your app.
 
 ### Data
 
-Describe your data and the relationships between the data points. You can show this visually using diagrams, or write it out.
+![](/assets/images/data.png)
 
 ### Endpoints
 
