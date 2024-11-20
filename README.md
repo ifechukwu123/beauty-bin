@@ -303,6 +303,62 @@ Status code 204
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date.
 
+- Set up Development Environment
+
+  - Initialize the React frontend, Express backend, and database
+
+- Set up Product CRUD
+
+  - Initialize API endpoints for adding, updating, and deleting products.
+  - Set up mock data
+
+- Feature: Homepage
+
+  - Set up react routes, create hompage & navigation links
+
+- Feature: List products
+
+  - Create GET /products endpoint
+  - Display product list
+
+- Feature: Bin page
+
+  - Create GET /products/expiring-soon , /products/expired endpoints
+  - Display products on the page
+
+- Feature: Add Product Page
+
+  - Create POST /products/:id
+  - Implement Product form on frontend
+  - Test that it creates product & displays on product page
+
+- Feature: Product details page
+
+  - Create GET /products/:id , DELETE /products/:id & PUT /products/:id
+  - Create page to view product details
+  - Implement Edit & Delete Modals
+
+- Feature: Wishlist
+
+  - Create GET /wishlist & POST /wishlist
+  - Create page to display pages
+
+- Feature: Notifications
+
+  - Set up web notifications and time range to do so
+
+- Style all pages
+
+- Feature: Sorting
+
+  - Implement ability to sort products on inventory page by category or expiration dates
+
+- Add animations
+
+- Test site
+
+- Demo
+
 ---
 
 ## Future Implementations
