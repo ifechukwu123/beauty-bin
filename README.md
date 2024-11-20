@@ -94,6 +94,211 @@ List any external sources of data that will be used in your app.
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
+**GET /products**
+Gets all makeup products from the inventory
+
+Response:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Setting Powder",
+    "brand": "Laura Mercier",
+    "batchNumber": "7229MM",
+    "category": "Face",
+    "dateOpened": "1732123918253",
+    "expirationDate": "1752124458253",
+  },
+  ...
+]
+```
+
+**GET /products/expiring-soon**
+Gets all makeup products from the inventory that are expiring soon
+
+Response:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Setting Spray",
+    "brand": "Charlotte Tilbury",
+    "batchNumber": "7229MM",
+    "category": "Face",
+    "dateOpened": "1732123918253",
+    "expirationDate": "1752124458253",
+  },
+  ...
+]
+```
+
+**GET /products/expired**
+Gets all makeup products from the inventory that are expired
+
+Response:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Lip Stick",
+    "brand": "Lip Bar",
+    "batchNumber": "7229MM",
+    "category": "Lips",
+    "dateOpened": "1732123918253",
+    "expirationDate": "1752124458253",
+  },
+  ...
+]
+```
+
+**GET /products/:id**
+Gets a specific makeup product
+
+Parameter:
+
+- id: Product id as a number
+
+Response:
+
+```
+{
+  "id": 5,
+  "name": "Blush",
+  "brand": "Pat Mcgrath",
+  "batchNumber": "7229MM",
+  "category": "Face",
+  "dateOpened": "1732123918253",
+  "expirationDate": "1752124458253",
+}
+```
+
+**POST /products/**
+Adds a new makeup product to the inventory
+
+Response:
+
+```
+{
+  "id": 15,
+  "name": "Contour",
+  "brand": "Fenty",
+  "batchNumber": "7229MM",
+  "category": "Face",
+  "dateOpened": "1732123918253",
+  "expirationDate": "1752124458253",
+}
+```
+
+**DELETE /products/:id**
+Deletes a specific makeup product from the inventory
+
+Parameter:
+
+- id: Product id as a number
+
+Response:
+
+```
+Status code 204
+```
+
+**PUT /products/:id**
+Edits a specific makeup product
+
+Parameter:
+
+- id: Product id as a number
+
+Response:
+
+```
+{
+  "id": 5,
+  "name": "Blush",
+  "brand": "Elf",
+  "batchNumber": "7229MM",
+  "category": "Face",
+  "dateOpened": "1732123918253",
+  "expirationDate": "1752124458253",
+}
+```
+
+**GET /categories**
+Gets all categories of makeup products
+
+Response:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Face",
+  },
+  {
+    "id": 2,
+    "name": "Lips",
+  },
+  {
+    "id": 3,
+    "name": "Eyes",
+  },
+  ...
+]
+```
+
+**GET /wishlist**
+Fetch all items in the wishlist
+
+Response:
+
+```
+[
+  {
+    "id": 1,
+    "name": "Setting Spray",
+    "brand": "Elf",
+  },
+  {
+    "id": 2,
+    "name": "Lip Liner",
+    "brand": "Charlotte Tilbury",
+  },
+  {
+    "id": 3,
+    "name": "Concealer",
+    "brand": "Too Faced",
+  },
+  ...
+]
+```
+
+**POST /wishlist/**
+Adds a new makeup product to the wishlist
+
+```
+{
+  "id": 15,
+  "name": "Contour",
+  "brand": "Fenty",
+}
+```
+
+**DELETE /wishlist/:id**
+Deletes a specific makeup product from the wishlist
+
+Parameter:
+
+- id: Wishlist id as a number
+
+Response:
+
+```
+Status code 204
+```
+
 ## Roadmap
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date.
