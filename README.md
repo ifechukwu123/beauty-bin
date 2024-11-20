@@ -64,27 +64,27 @@ List any external sources of data that will be used in your app.
 
 #### Home Page
 
-![] (./homepage.png)
+![](/assets/images/homepage.png)
 
 #### Bin Page
 
-![] (binPage.png)
+![](/assets/images/binPage.png)
 
 #### Add Product Page
 
-![] (addProductPage.png)
+![](/assets/images/addProductPage.png)
 
 #### Inventory Page
 
-![] (inventoryPage.png)
+![](/assets/images/inventoryPage.png)
 
 #### Product Details Page
 
-![] (productDetail.png)
+![](/assets/images/productDetail.png)
 
 #### WishList Page
 
-![] (wishlistPage.png)
+![](/assets/images/wishlistPage.png)
 
 ### Data
 
