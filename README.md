@@ -68,27 +68,27 @@ Not sure yet :confounded:
 
 #### Bin Page
 
-![](/assets/images/binPage.png)
+![](/src/assets/images/binPage.png)
 
 #### Add Product Page
 
-![](/assets/images/addProductPage.png)
+![](/src/assets/images/addProductPage.png)
 
 #### Inventory Page
 
-![](/assets/images/inventoryPage.png)
+![](/src/assets/images/inventoryPage.png)
 
 #### Product Details Page
 
-![](/assets/images/productDetail.png)
+![](/src/assets/images/productDetail.png)
 
 #### WishList Page
 
-![](/assets/images/wishlistPage.png)
+![](/src/assets/images/wishlistPage.png)
 
 ### Data
 
-![](/assets/images/data.png)
+![](/src/assets/images/data.png)
 
 ### Endpoints
 
