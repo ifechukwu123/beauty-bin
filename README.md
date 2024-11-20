@@ -64,7 +64,7 @@ List any external sources of data that will be used in your app.
 
 #### Home Page
 
-![] (homepage.png)
+![] (./homepage.png)
 
 #### Bin Page
 
