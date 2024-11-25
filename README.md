@@ -372,5 +372,6 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 - Login & Sign up setup
 - Create personalized notifications setting
 - Email notifications
+- Notifications to remind ask if a product has been opened is open was not selected at input
 - Barcode scanning to automatically add product input
 - User profile page
