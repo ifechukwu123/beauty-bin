@@ -107,8 +107,8 @@ Response:
     "brand": "Laura Mercier",
     "batchNumber": "7229MM",
     "category": "Face",
-    "dateOpened": "1732123918253",
-    "expirationDate": "1752124458253",
+    "dateOpened": "2023-08-08",
+    "expirationDate": "2024-12-18",
   },
   ...
 ]
@@ -127,8 +127,9 @@ Response:
     "brand": "Charlotte Tilbury",
     "batchNumber": "7229MM",
     "category": "Face",
-    "dateOpened": "1732123918253",
-    "expirationDate": "1752124458253",
+    "dateOpened": "2022-06-28",
+    "expirationDate": "2024-12-28",
+    "notification_status" : "unread"
   },
   ...
 ]
@@ -147,8 +148,9 @@ Response:
     "brand": "Lip Bar",
     "batchNumber": "7229MM",
     "category": "Lips",
-    "dateOpened": "1732123918253",
-    "expirationDate": "1752124458253",
+    "dateOpened": "2020-08-08",
+    "expirationDate": "2023-02-12",
+    "notification_status" : "dismissed"
   },
   ...
 ]
@@ -170,13 +172,22 @@ Response:
   "brand": "Pat Mcgrath",
   "batchNumber": "7229MM",
   "category": "Face",
-  "dateOpened": "1732123918253",
-  "expirationDate": "1752124458253",
+  "dateOpened": "2024-08-08",
+  "expirationDate": "2025-12-18",
 }
 ```
 
-**POST /products/**
+**POST /products**
 Adds a new makeup product to the inventory
+
+Request body:
+
+- name
+- brand
+- batchNumber
+- category
+- dateOpened
+- expirationDate
 
 Response:
 
@@ -187,8 +198,8 @@ Response:
   "brand": "Fenty",
   "batchNumber": "7229MM",
   "category": "Face",
-  "dateOpened": "1732123918253",
-  "expirationDate": "1752124458253",
+  "dateOpened": "2024-08-08",
+  "expirationDate": "2025-12-18",
 }
 ```
 
@@ -212,6 +223,15 @@ Parameter:
 
 - id: Product id as a number
 
+Request body:
+
+- name
+- brand
+- batchNumber
+- category
+- dateOpened
+- expirationDate
+
 Response:
 
 ```
@@ -221,8 +241,8 @@ Response:
   "brand": "Elf",
   "batchNumber": "7229MM",
   "category": "Face",
-  "dateOpened": "1732123918253",
-  "expirationDate": "1752124458253",
+  "dateOpened": "2024-08-08",
+  "expirationDate": "2025-12-18",
 }
 ```
 
@@ -278,6 +298,11 @@ Response:
 **POST /wishlist/**
 Adds a new makeup product to the wishlist
 
+Request body:
+
+- name
+- brand
+
 ```
 {
   "id": 15,
@@ -303,61 +328,63 @@ Status code 204
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation working back from the capstone due date.
 
-- Set up Development Environment
+- [x] Set up Development Environment
 
-  - Initialize the React frontend, Express backend, and database
+  - [] Initialize the React frontend, Express backend, and database
 
-- Set up Product CRUD
+- [x] Set up Product CRUD
 
-  - Initialize API endpoints for adding, updating, and deleting products.
-  - Set up mock data
+  - [x] Initialize API endpoints for adding, updating, and deleting products.
+  - [x] Set up mock data
 
-- Feature: Homepage
+- [] Feature: Homepage
 
-  - Set up react routes, create hompage & navigation links
+  - [x] Set up react routes
+  - [] Create hompage
+  - [] Set up navigation links
 
-- Feature: List products
+- [] Feature: List products
 
-  - Create GET /products endpoint
-  - Display product list
+  - [] Create GET /products endpoint
+  - [] Display product list
 
-- Feature: Bin page
+- [] Feature: Bin page
 
-  - Create GET /products/expiring-soon , /products/expired endpoints
-  - Display products on the page
+  - [] Create GET /products/expiring-soon , /products/expired endpoints
+  - [] Display products on the page
 
-- Feature: Add Product Page
+- [] Feature: Add Product Page
 
-  - Create POST /products/:id
-  - Implement Product form on frontend
-  - Test that it creates product & displays on product page
+  - [] Create POST /products/:id
+  - [] Implement Product form on frontend
+  - [] Test that it creates product & displays on product page
 
-- Feature: Product details page
+- [] Feature: Product details page
 
-  - Create GET /products/:id , DELETE /products/:id & PUT /products/:id
-  - Create page to view product details
-  - Implement Edit & Delete Modals
+  - [] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
+  - [] Create page to view product details
+  - [] Implement Edit & Delete Modals
 
-- Feature: Wishlist
+- [] Feature: Wishlist
 
-  - Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
-  - Create page to display pages
+  - [] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
+  - [] Create page to display pages
 
-- Feature: Notifications
+- [] Feature: Notifications
 
-  - Set up web notifications and time range to do so
+  - [] Set up web notifications and time range to do so
 
-- Style all pages
+- [] Style all pages
 
-- Feature: Sorting
+- [] Feature: Sorting
 
-  - Implement ability to sort products on inventory page by category or expiration dates
+  - [] Implement ability to sort products on inventory page by category or expiration dates
 
-- Add animations
+- [] Add animations
 
-- Test site
+- [] Test site
 
-- Demo
+- [] Demo
 
 ---
 
