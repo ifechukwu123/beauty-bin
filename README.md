@@ -64,7 +64,7 @@ Not sure yet :confounded:
 
 #### Home Page
 
-![](/assets/images/homepage.png)
+![](src/assets/images/homepage.png)
 
 #### Bin Page
 
@@ -330,61 +330,61 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 - [x] Set up Development Environment
 
-  - [] Initialize the React frontend, Express backend, and database
+  - [x] Initialize the React frontend, Express backend, and database
 
 - [x] Set up Product CRUD
 
   - [x] Initialize API endpoints for adding, updating, and deleting products.
   - [x] Set up mock data
 
-- [] Feature: Homepage
+- [ ] Feature: Homepage
 
   - [x] Set up react routes
   - [] Create hompage
-  - [] Set up navigation links
+  - [ ] Set up navigation links
 
-- [] Feature: List products
+- [ ] Feature: List products
 
-  - [] Create GET /products endpoint
-  - [] Display product list
+  - [ ] Create GET /products endpoint
+  - [ ] Display product list
 
-- [] Feature: Bin page
+- [ ] Feature: Bin page
 
-  - [] Create GET /products/expiring-soon , /products/expired endpoints
-  - [] Display products on the page
+  - [ ] Create GET /products/expiring-soon , /products/expired endpoints
+  - [ ] Display products on the page
 
-- [] Feature: Add Product Page
+- [ ] Feature: Add Product Page
 
-  - [] Create POST /products/:id
-  - [] Implement Product form on frontend
-  - [] Test that it creates product & displays on product page
+  - [ ] Create POST /products/:id
+  - [ ] Implement Product form on frontend
+  - [ ] Test that it creates product & displays on product page
 
-- [] Feature: Product details page
+- [ ] Feature: Product details page
 
-  - [] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
-  - [] Create page to view product details
-  - [] Implement Edit & Delete Modals
+  - [ ] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
+  - [ ] Create page to view product details
+  - [ ] Implement Edit & Delete Modals
 
-- [] Feature: Wishlist
+- [ ] Feature: Wishlist
 
-  - [] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
-  - [] Create page to display pages
+  - [ ] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
+  - [ ] Create page to display pages
 
-- [] Feature: Notifications
+- [ ] Feature: Notifications
 
-  - [] Set up web notifications and time range to do so
+  - [ ] Set up web notifications and time range to do so
 
-- [] Style all pages
+- [ ] Style all pages
 
-- [] Feature: Sorting
+- [ ] Feature: Sorting
 
-  - [] Implement ability to sort products on inventory page by category or expiration dates
+  - [ ] Implement ability to sort products on inventory page by category or expiration dates
 
-- [] Add animations
+- [ ] Add animations
 
-- [] Test site
+- [ ] Test site
 
-- [] Demo
+- [ ] Demo
 
 ---
 
