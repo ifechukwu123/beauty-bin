@@ -353,10 +353,10 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
   - [x] Create homepage
   - [x] Set up navigation links
 
-- [ ] Feature: List products
+- [x] Feature: List products
 
-  - [ ] Create GET /products endpoint
-  - [ ] Display product list
+  - [x] Create GET /products endpoint
+  - [x] Display product list
 
 - [ ] Feature: Bin page
 
@@ -371,14 +371,16 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 - [ ] Feature: Product details page
 
-  - [ ] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
-  - [ ] Create page to view product details
+  - [x] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
+  - [x] Create page to view product details
   - [ ] Implement Edit & Delete Modals
+  - [ ] Test adding a product to the wishlist
 
 - [ ] Feature: Wishlist
 
-  - [ ] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
-  - [ ] Create page to display pages
+  - [x] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
+  - [x] Create page to display wishlist
+  - [ ] Test deleting a wishlist item
 
 - [ ] Feature: Notifications
 

@@ -11,10 +11,7 @@ export default function AddProductPage() {
 
 	async function handleOnSubmit(values) {
 		try {
-			const response = await axios.post(`${url}/products`, {
-				...values,
-				userId: 1,
-			});
+			const response = await axios.post(`${url}/products`, values);
 			navigate(`/products/${response.data.id}`);
 		} catch (error) {
 			console.error(`Unable to add new product: ${error}`);
