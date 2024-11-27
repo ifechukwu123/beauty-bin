@@ -373,14 +373,16 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
   - [x] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
   - [x] Create page to view product details
-  - [ ] Implement Edit & Delete Modals
-  - [ ] Test adding a product to the wishlist
+  - [x] Implement Edit page
+  - [ ] Delete Modal
+  - [x] Test adding a product to the wishlist
 
 - [ ] Feature: Wishlist
 
   - [x] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
   - [x] Create page to display wishlist
-  - [ ] Test deleting a wishlist item
+  - [x] Test deleting a wishlist item
+  - [ ] Implement Delete Modal
 
 - [ ] Feature: Notifications
 

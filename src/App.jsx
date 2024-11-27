@@ -9,6 +9,7 @@ import AddProductPage from "./pages/AddProductPage/AddProductPage";
 import WishlistPage from "./pages/WishlistPage/WishlistPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import EditProductPage from "./pages/EditProductPage/EditProductPage";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path="products" element={<InventoryPage />} />
 					<Route path="products/add" element={<AddProductPage />} />
 					<Route path="products/:id" element={<ProductDetailsPage />} />
+					<Route path="products/:id/edit" element={<EditProductPage />} />
 					<Route path="wishlist" element={<WishlistPage />} />
 					<Route path="about" element={<AboutPage />} />
 					<Route path="*" element={<NotFoundPage />} />

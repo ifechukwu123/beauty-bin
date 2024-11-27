@@ -32,7 +32,11 @@ export default function WishlistPage() {
 			<h1>Wishlist</h1>
 			<ul className="wishlist__list">
 				{wishlist.map((wish) => (
-					<WishItem key={wish.id} wishlistItem={wish} />
+					<WishItem
+						key={wish.id}
+						wishlistItem={wish}
+						getWishList={getWishList}
+					/>
 				))}
 			</ul>
 		</div>

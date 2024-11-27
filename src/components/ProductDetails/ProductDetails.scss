@@ -1,0 +1,16 @@
+.productDetails {
+	&__header {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 20px;
+	}
+
+	&__info-container {
+		display: flex;
+		gap: 50px;
+
+		img {
+			height: 200px;
+		}
+	}
+}
