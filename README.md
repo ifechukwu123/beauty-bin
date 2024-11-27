@@ -369,20 +369,20 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
   - [x] Implement Product form on frontend
   - [x] Test that it creates product & displays on product page
 
-- [ ] Feature: Product details page
+- [x] Feature: Product details page
 
   - [x] Create GET /products/:id , DELETE /products/:id & PUT /products/:id
   - [x] Create page to view product details
   - [x] Implement Edit page
-  - [ ] Delete Modal
+  - [x] Delete Modal
   - [x] Test adding a product to the wishlist
 
-- [ ] Feature: Wishlist
+- [x] Feature: Wishlist
 
   - [x] Create GET /wishlist, POST /wishlist & DELETE /wishlist/:id
   - [x] Create page to display wishlist
   - [x] Test deleting a wishlist item
-  - [ ] Implement Delete Modal
+  - [x] Implement Delete Modal
 
 - [ ] Feature: Notifications
 

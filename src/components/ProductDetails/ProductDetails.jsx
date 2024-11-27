@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./ProductDetails.scss";
 import axios from "axios";
+import DeleteModal from "../DeleteModal/DeleteModal";
+import { useState } from "react";
 
 const url = import.meta.env.VITE_API_URL;
 export default function ProductDetails({ product }) {
+	let navigate = useNavigate();
+	const [show, setShow] = useState(false);
+
 	let {
 		batchNumber,
 		brand,
@@ -18,7 +23,7 @@ export default function ProductDetails({ product }) {
 	dateOpened = new Date(dateOpened).toDateString();
 	expirationDate = new Date(expirationDate).toDateString();
 
-	async function handleOnClick() {
+	async function handleAddWish() {
 		try {
 			await axios.post(`${url}/wishlist`, {
 				name,
@@ -31,45 +36,69 @@ export default function ProductDetails({ product }) {
 		}
 	}
 
+	function handleShow() {
+		setShow(!show);
+	}
+
+	async function handleDelete() {
+		try {
+			await axios.delete(`${url}/products/${id}`);
+			handleShow();
+			navigate("/products");
+		} catch (error) {
+			console.error(`Unable to delete product from inventory: ${error}`);
+		}
+	}
+
 	return (
-		<article className="productDetails">
-			<div className="productDetails__header">
-				<Link to="/products">Back</Link>
-				<Link to={`/products/${id}/edit`}>Edit</Link>
-			</div>
-			<div className="productDetails__info-container">
-				<img
-					src={`${url}${image}`}
-					alt={`A picture of ${name} from ${brand} `}
-				/>
-				<div className="productDetails__info">
-					<div>
-						<h3>Name</h3>
-						<span>{name}</span>
-					</div>
-					<div>
-						<h3>Brand</h3>
-						<span>{brand}</span>
-					</div>
-					<div>
-						<h3>Category</h3>
-						<span>{category}</span>
-					</div>
-					<div>
-						<h3>Batch Number</h3>
-						<span>{batchNumber}</span>
-					</div>
-					<div>
-						<h3>Date Opened</h3>
-						<span>{dateOpened}</span>
-					</div>
-					<div>
-						<h3>Expiration Date</h3>
-						<span>{expirationDate}</span>
+		<>
+			<article className="productDetails">
+				<div className="productDetails__header">
+					<Link to="/products">Back</Link>
+					<Link to={`/products/${id}/edit`}>Edit</Link>
+				</div>
+				<div className="productDetails__info-container">
+					<img
+						src={`${url}${image}`}
+						alt={`A picture of ${name} from ${brand} `}
+					/>
+					<div className="productDetails__info">
+						<div>
+							<h3>Name</h3>
+							<span>{name}</span>
+						</div>
+						<div>
+							<h3>Brand</h3>
+							<span>{brand}</span>
+						</div>
+						<div>
+							<h3>Category</h3>
+							<span>{category}</span>
+						</div>
+						<div>
+							<h3>Batch Number</h3>
+							<span>{batchNumber}</span>
+						</div>
+						<div>
+							<h3>Date Opened</h3>
+							<span>{dateOpened}</span>
+						</div>
+						<div>
+							<h3>Expiration Date</h3>
+							<span>{expirationDate}</span>
+						</div>
 					</div>
 				</div>
-			</div>
-			<button onClick={handleOnClick}>Add to wishlist</button>
-		</article>
+				<button onClick={handleAddWish}>Add to wishlist</button>
+				<button onClick={handleShow}>Delete</button>
+			</article>
+			<DeleteModal
+				name={name}
+				type="inventory"
+				show={show}
+				handleDelete={handleDelete}
+				handleClose={handleShow}
+			/>
+		</>
 	);
 }
