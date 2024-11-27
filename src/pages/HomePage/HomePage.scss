@@ -1,6 +1,7 @@
 .homepage {
-	width: 100vw;
+	display: flex;
+	justify-content: space-between;
 	height: 100vh;
-	background-image: url(../../assets/images/mesh-gradient.png);
-	background-size: cover;
+	padding: 15px;
+	align-items: center;
 }

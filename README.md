@@ -107,6 +107,7 @@ Response:
     "brand": "Laura Mercier",
     "batchNumber": "7229MM",
     "category": "Face",
+    "image": "/images/image5.png",
     "dateOpened": "2023-08-08",
     "expirationDate": "2024-12-18",
   },
@@ -127,6 +128,7 @@ Response:
     "brand": "Charlotte Tilbury",
     "batchNumber": "7229MM",
     "category": "Face",
+    "image": "/images/image5.png",
     "dateOpened": "2022-06-28",
     "expirationDate": "2024-12-28",
     "notification_status" : "unread"
@@ -148,6 +150,7 @@ Response:
     "brand": "Lip Bar",
     "batchNumber": "7229MM",
     "category": "Lips",
+    "image": "/images/image5.png",
     "dateOpened": "2020-08-08",
     "expirationDate": "2023-02-12",
     "notification_status" : "dismissed"
@@ -172,6 +175,7 @@ Response:
   "brand": "Pat Mcgrath",
   "batchNumber": "7229MM",
   "category": "Face",
+  "image": "/images/image5.png",
   "dateOpened": "2024-08-08",
   "expirationDate": "2025-12-18",
 }
@@ -198,6 +202,7 @@ Response:
   "brand": "Fenty",
   "batchNumber": "7229MM",
   "category": "Face",
+  "image": "/images/image5.png",
   "dateOpened": "2024-08-08",
   "expirationDate": "2025-12-18",
 }
@@ -241,6 +246,7 @@ Response:
   "brand": "Elf",
   "batchNumber": "7229MM",
   "category": "Face",
+  "image": "/images/image5.png",
   "dateOpened": "2024-08-08",
   "expirationDate": "2025-12-18",
 }
@@ -279,16 +285,19 @@ Response:
   {
     "id": 1,
     "name": "Setting Spray",
+    "image": "/images/image5.png",
     "brand": "Elf",
   },
   {
     "id": 2,
     "name": "Lip Liner",
+    "image": "/images/image5.png",
     "brand": "Charlotte Tilbury",
   },
   {
     "id": 3,
     "name": "Concealer",
+    "image": "/images/image5.png",
     "brand": "Too Faced",
   },
   ...
@@ -307,6 +316,7 @@ Request body:
 {
   "id": 15,
   "name": "Contour",
+  "image": "/images/image5.png",
   "brand": "Fenty",
 }
 ```
@@ -337,11 +347,11 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
   - [x] Initialize API endpoints for adding, updating, and deleting products.
   - [x] Set up mock data
 
-- [ ] Feature: Homepage
+- [x] Feature: Homepage
 
   - [x] Set up react routes
-  - [] Create hompage
-  - [ ] Set up navigation links
+  - [x] Create homepage
+  - [x] Set up navigation links
 
 - [ ] Feature: List products
 
@@ -353,11 +363,11 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
   - [ ] Create GET /products/expiring-soon , /products/expired endpoints
   - [ ] Display products on the page
 
-- [ ] Feature: Add Product Page
+- [x] Feature: Add Product Page
 
-  - [ ] Create POST /products/:id
-  - [ ] Implement Product form on frontend
-  - [ ] Test that it creates product & displays on product page
+  - [x] Create POST /products/:id
+  - [x] Implement Product form on frontend
+  - [x] Test that it creates product & displays on product page
 
 - [ ] Feature: Product details page
 

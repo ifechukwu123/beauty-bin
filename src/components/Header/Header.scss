@@ -1,7 +1,12 @@
 .header {
+	background-color: white;
+	border-radius: 15px;
 	ul {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		margin-top: 0;
+		list-style-type: none;
 
 		div {
 			width: 50px;

@@ -8,21 +8,25 @@ import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import AddProductPage from "./pages/AddProductPage/AddProductPage";
 import WishlistPage from "./pages/WishlistPage/WishlistPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Header />
-			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route path="home" element={<Navigate to="/" />} />
-				<Route path="bin" element={<BinPage />} />
-				<Route path="products" element={<InventoryPage />} />
-				<Route path="products/add" element={<AddProductPage />} />
-				<Route path="products/:id" element={<ProductDetailsPage />} />
-				<Route path="wishlist" element={<WishlistPage />} />
-				<Route path="*" element={<NotFoundPage />} />
-			</Routes>
+			<main className="main">
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="home" element={<Navigate to="/" />} />
+					<Route path="bin" element={<BinPage />} />
+					<Route path="products" element={<InventoryPage />} />
+					<Route path="products/add" element={<AddProductPage />} />
+					<Route path="products/:id" element={<ProductDetailsPage />} />
+					<Route path="wishlist" element={<WishlistPage />} />
+					<Route path="about" element={<AboutPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Routes>
+			</main>
 		</BrowserRouter>
 	);
 }
