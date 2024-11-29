@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
@@ -10,11 +11,28 @@ import WishlistPage from "./pages/WishlistPage/WishlistPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import EditProductPage from "./pages/EditProductPage/EditProductPage";
+import { io } from "socket.io-client";
 
+const url = import.meta.env.VITE_API_URL;
+const socket = io(url);
 function App() {
+	const [counter, setCounter] = useState(""); //make this value persist with localStorage
+	const [notifObject, setNotifObject] = useState({}); //make this value persist with localStorage
+
+	useEffect(() => {
+		socket.on("connect", () => {
+			//console.log(socket.id);
+		});
+	}, []);
+
+	socket.on("notification", (arg) => {
+		setNotifObject(arg.message); // world
+		setCounter(arg.count);
+	});
+
 	return (
 		<BrowserRouter>
-			<Header />
+			<Header count={counter} content={notifObject} />
 			<main className="main">
 				<Routes>
 					<Route path="/" element={<HomePage />} />

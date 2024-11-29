@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
-export default function Header() {
+export default function Header({ count, content }) {
+	console.log(content);
 	return (
 		<header className="header">
 			<nav>
@@ -14,7 +15,7 @@ export default function Header() {
 						<Link to="/wishlist">Wishlist</Link>{" "}
 					</li>{" "}
 					{/* will be a heart icon */}
-					<li>Notification</li> {/* will be a notification icon */}
+					<li>Notification {count}</li> {/* will be a notification icon */}
 					<li>
 						<div></div>
 						Ife Onuorah

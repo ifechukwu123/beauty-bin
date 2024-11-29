@@ -31,6 +31,7 @@ Many people accumulate a large collection of makeup products, making it challeng
 List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
 
 - Javascript
+- Socket.IO
 - Client libraries
 
   - React
@@ -42,9 +43,11 @@ List technologies that will be used in your app, including any libraries to save
   - Netlify
 
 - Server libraries
-  - MySQL with knex.js
+  - MySQL2 with knex.js
   - Express
-  - Firebase Cloud Messaging
+  - Node-cron
+  - Nodemailer
+  - React Email
   - Heroku
 
 ### APIs
@@ -384,11 +387,14 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
   - [x] Test deleting a wishlist item
   - [x] Implement Delete Modal
 
-- [ ] Feature: Notifications
+- [x] Feature: Notifications
 
-  - [ ] Set up web notifications and time range to do so
+  - [x] Set up web notifications and time range to do so
 
-- [ ] Style all pages
+- [ ] Styling
+
+  - [ ] Style front-end
+  - [ ] Style React-email
 
 - [ ] Feature: Sorting
 
