@@ -1,2 +1,9 @@
 .deleteModal {
+	&__icon {
+		width: 25px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

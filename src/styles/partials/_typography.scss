@@ -1,17 +1,22 @@
 @font-face {
 	font-family: "DMSans";
-	src: url(assets/fonts/DMSans-Regular.ttf) format("truetype");
+	src: url(assets/fonts/DMSans/DMSans-Regular.ttf) format("truetype");
 	font-weight: 400;
 }
 
 @font-face {
 	font-family: "DMSans";
-	src: url(assets/fonts/DMSans-SemiBold.ttf) format("truetype");
+	src: url(assets/fonts/DMSans/DMSans-SemiBold.ttf) format("truetype");
 	font-weight: 600;
 }
 
 @font-face {
 	font-family: "DMSans";
-	src: url(assets/fonts/DMSans-Bold.ttf) format("truetype");
+	src: url(assets/fonts/DMSans/DMSans-Bold.ttf) format("truetype");
 	font-weight: 800;
+}
+
+@font-face {
+	font-family: "Halimun";
+	src: url(assets/fonts/Halimun/Halimun.ttf) format("truetype");
 }

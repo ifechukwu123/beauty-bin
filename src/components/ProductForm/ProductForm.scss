@@ -1,5 +1,56 @@
-.form {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+.productForm {
+	&__title {
+		text-transform: capitalize;
+	}
+	.form {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid black;
+		padding: 20px;
+
+		&__label {
+			font-size: 18px;
+		}
+
+		&__field {
+			border: 2px solid $secondary-grey;
+			height: 3.4375rem;
+			padding: 0.625rem 1rem;
+			font-size: 1.125rem;
+			border-radius: 30px;
+
+			&:active,
+			&:focus {
+				outline: 2px solid $primary-black;
+				border: none;
+			}
+
+			&::placeholder {
+				font-family: "DMSans";
+				color: $primary-black;
+				font-size: 1.125rem;
+			}
+		}
+
+		&__button-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__button {
+			border: none;
+			background-color: $primary-pink;
+			padding: 4px 16px;
+			border-radius: 18px;
+			font-size: 18px;
+
+			&:hover {
+				background-color: $secondary-pink;
+				cursor: pointer;
+			}
+		}
+	}
 }

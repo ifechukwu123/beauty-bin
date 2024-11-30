@@ -3,6 +3,8 @@ import "./ProductDetails.scss";
 import axios from "axios";
 import DeleteModal from "../DeleteModal/DeleteModal";
 import { useState } from "react";
+import backArrow from "../../assets/icons/arrow-left.svg";
+import editIcon from "../../assets/icons/pencil.svg";
 
 const url = import.meta.env.VITE_API_URL;
 export default function ProductDetails({ product }) {
@@ -51,47 +53,58 @@ export default function ProductDetails({ product }) {
 	}
 
 	return (
-		<>
-			<article className="productDetails">
-				<div className="productDetails__header">
-					<Link to="/products">Back</Link>
-					<Link to={`/products/${id}/edit`}>Edit</Link>
-				</div>
-				<div className="productDetails__info-container">
+		<article className="productDetails">
+			<div className="productDetails__header">
+				<Link to="/products">
 					<img
-						src={`${url}${image}`}
-						alt={`A picture of ${name} from ${brand} `}
+						src={backArrow}
+						alt="A back arrow icon"
+						className="productDetails__icon"
 					/>
-					<div className="productDetails__info">
-						<div>
-							<h3>Name</h3>
-							<span>{name}</span>
-						</div>
-						<div>
-							<h3>Brand</h3>
-							<span>{brand}</span>
-						</div>
-						<div>
-							<h3>Category</h3>
-							<span>{category}</span>
-						</div>
-						<div>
-							<h3>Batch Number</h3>
-							<span>{batchNumber}</span>
-						</div>
-						<div>
-							<h3>Date Opened</h3>
-							<span>{dateOpened}</span>
-						</div>
-						<div>
-							<h3>Expiration Date</h3>
-							<span>{expirationDate}</span>
-						</div>
+				</Link>
+				<Link to={`/products/${id}/edit`}>
+					<img
+						src={editIcon}
+						alt="An edit pencil icon"
+						className="productDetails__icon"
+					/>
+				</Link>
+			</div>
+			<div className="productDetails__info-container">
+				<img
+					src={`${url}${image}`}
+					alt={`A picture of ${name} from ${brand} `}
+				/>
+				<div className="productDetails__info">
+					<div>
+						<h3>Name</h3>
+						<span>{name}</span>
+					</div>
+					<div>
+						<h3>Brand</h3>
+						<span>{brand}</span>
+					</div>
+					<div>
+						<h3>Category</h3>
+						<span>{category}</span>
+					</div>
+					<div>
+						<h3>Batch Number</h3>
+						<span>{batchNumber}</span>
+					</div>
+					<div>
+						<h3>Date Opened</h3>
+						<span>{dateOpened}</span>
+					</div>
+					<div>
+						<h3>Expiration Date</h3>
+						<span>{expirationDate}</span>
 					</div>
 				</div>
-				<button onClick={handleAddWish}>Add to wishlist</button>
-				<button onClick={handleShow}>Delete</button>
-			</article>
+			</div>
+			<button onClick={handleAddWish}>Add to wishlist</button>
+			<button onClick={handleShow}>Delete</button>
+
 			<DeleteModal
 				name={name}
 				type="inventory"
@@ -99,6 +112,6 @@ export default function ProductDetails({ product }) {
 				handleDelete={handleDelete}
 				handleClose={handleShow}
 			/>
-		</>
+		</article>
 	);
 }

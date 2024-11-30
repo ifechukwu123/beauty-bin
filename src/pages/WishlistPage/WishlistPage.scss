@@ -1,14 +1,13 @@
 @use "../../styles/partials/variables" as *;
 
 .wishlist {
-	&__title {
-		text-align: center;
-		font-size: $h1-font-size;
-		font-weight: 400;
-	}
+	padding: 0 48px;
+
 	&__list {
 		display: flex;
 		//gap: 50px;
 		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
 	}
 }

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
-import BinPage from "./pages/BinPage/BinPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
 import AddProductPage from "./pages/AddProductPage/AddProductPage";

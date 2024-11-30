@@ -27,6 +27,12 @@ export default function AddProductPage() {
 	};
 
 	return (
-		<ProductForm handleOnSubmit={handleOnSubmit} product={product} page="add" />
+		<div className="addProduct">
+			<ProductForm
+				handleOnSubmit={handleOnSubmit}
+				product={product}
+				page="add"
+			/>
+		</div>
 	);
 }

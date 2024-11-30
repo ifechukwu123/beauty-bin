@@ -2,6 +2,7 @@ import axios from "axios";
 import "./WishItem.scss";
 import { useState } from "react";
 import DeleteModal from "../DeleteModal/DeleteModal";
+import deleteIcon from "../../assets/icons/delete.svg";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -32,9 +33,17 @@ export default function WishItem({ wishlistItem, getWishList }) {
 				alt={`A picture of ${name} from ${brand}`}
 				className="wishlistProduct-card__image"
 			/>
-			<h2 className="wishlistProduct-card__title">{brand}</h2>
-			<span className="wishlistProduct-card__name">{name}</span>
-			<button onClick={handleShow}>Delete</button>
+			<div className="wishlistProduct-card__info">
+				<h2 className="wishlistProduct-card__name">{name}</h2>
+				<span className="wishlistProduct-card__brand">{brand}</span>
+			</div>
+
+			<img
+				src={deleteIcon}
+				alt="A delete garbage icon"
+				onClick={handleShow}
+				className="wishlistProduct-card__icon"
+			/>
 			<DeleteModal
 				name={name}
 				type="wishlist"

@@ -55,10 +55,12 @@ export default function EditProductPage() {
 	};
 
 	return (
-		<ProductForm
-			handleOnSubmit={handleOnSubmit}
-			product={newProduct}
-			page="edit"
-		/>
+		<div className="editProduct">
+			<ProductForm
+				handleOnSubmit={handleOnSubmit}
+				product={newProduct}
+				page="edit"
+			/>
+		</div>
 	);
 }

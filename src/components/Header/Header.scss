@@ -1,67 +1,34 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography";
 
 .header {
-	background-color: $primary-white;
-	border: 1.5px solid $primary-black;
-	margin-bottom: 1.25rem;
-	padding: 0.5rem 3rem;
+	background-color: $primary-pink;
+	border-bottom: 1.5px solid $primary-black;
+	padding: 1rem 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-	.nav {
+	&__link {
+		text-decoration: none;
+		color: $primary-black;
+
+		&--logo {
+			margin-right: -80px;
+		}
+	}
+
+	&__icon {
+		width: 25px;
+	}
+
+	&__logo {
+		font-family: "Halimun";
+		font-size: 25px;
+	}
+
+	&__icon-container {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		&__menu {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: $primary-pink;
-			width: 3.125rem;
-			height: 3.125rem;
-			border-radius: 50%;
-
-			&:hover {
-				cursor: pointer;
-				background-color: $secondary-pink;
-			}
-		}
-
-		&__notification {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 50px;
-		}
-
-		&__icon {
-			width: 1.5625rem;
-		}
-
-		&__link {
-			text-decoration: none;
-			color: $primary-black;
-		}
-
-		&__logo {
-			font-size: 2.1875rem;
-			text-transform: uppercase;
-		}
-
-		&__avatar {
-			display: flex;
-			align-items: center;
-			gap: 0.9375rem;
-			margin-left: 3.125rem;
-		}
-
-		&__avatar-wrapper {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: $primary-pink;
-			width: 3.125rem;
-			height: 3.125rem;
-			border-radius: 50%;
-		}
+		gap: 40px;
 	}
 }

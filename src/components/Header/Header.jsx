@@ -10,36 +10,30 @@ export default function Header({ count, content }) {
 	return (
 		<header className="header">
 			<nav className="nav">
-				<div className="nav__menu">
-					<img src={menuIcon} alt="A menu icon" className="nav__icon" />
-				</div>
+				<img src={menuIcon} alt="A menu icon" className="header__icon" />
+			</nav>
+			<Link to="/" className="header__link header__link--logo">
+				<span className="header__logo">Beauty Bin</span>
+			</Link>
 
-				<Link to="/" className="nav__link">
-					<span className="nav__logo">Beauty Bin</span>
+			<div className="header__icon-container">
+				<Link to="/wishlist" className="header__link">
+					<img src={heartIcon} alt="A heart icon" className="header__icon" />
 				</Link>
 
-				<div className="nav__notification">
-					<Link to="/wishlist" className="nav__link">
-						<img src={heartIcon} alt="A heart icon" className="nav__icon" />
-					</Link>
-
-					<div>
-						<img
-							src={bellIcon}
-							alt="An icon for a notification bell"
-							className="nav__icon"
-						/>{" "}
-						{count}
-					</div>
-					<div className="nav__avatar">
-						<div className="nav__avatar-wrapper">
-							<img src={avatar} alt="An avatar icon" className="nav__icon" />
-						</div>
-
-						<span>Hi Ife!</span>
-					</div>
+				<div className="header__notification">
+					<img
+						src={bellIcon}
+						alt="An icon for a notification bell"
+						className="header__icon"
+					/>{" "}
+					{count}
 				</div>
-			</nav>
+
+				<div className="header__avatar-wrapper">
+					<img src={avatar} alt="An avatar icon" className="header__icon" />
+				</div>
+			</div>
 		</header>
 	);
 }

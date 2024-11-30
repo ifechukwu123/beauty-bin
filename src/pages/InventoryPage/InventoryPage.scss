@@ -2,13 +2,6 @@
 
 .products {
 	padding: 3rem;
-
-	&__title {
-		text-align: center;
-		font-size: $h1-font-size;
-		font-weight: 400;
-	}
-
 	&-wrapper {
 		display: flex;
 	}

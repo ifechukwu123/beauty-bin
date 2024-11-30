@@ -3,12 +3,16 @@
 
 * {
 	box-sizing: border-box;
-	font-family: "DMSans"; //add backup
+	//font-family: "DMSans"; //add backup
 	color: $primary-black;
 }
 
 body {
 	margin: 0;
-	background-color: $primary-pink;
-	padding: 30px;
+}
+
+h1 {
+	text-align: center;
+	font-size: $h1-font-size;
+	font-weight: 400;
 }
