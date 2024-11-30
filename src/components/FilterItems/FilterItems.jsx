@@ -3,9 +3,8 @@ import downArrow from "../../assets/icons/arrow-single-down.svg";
 import upArrow from "../../assets/icons/arrow-single-up.svg";
 import { useState } from "react";
 
-export default function FilterItems({ name, content }) {
+export default function FilterItems({ name, content, setSelected, selected }) {
 	const [expanded, setExpanded] = useState(true);
-	const [selected, setSelected] = useState([]);
 
 	function handleOnClick() {
 		setExpanded(!expanded);

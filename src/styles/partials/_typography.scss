@@ -1,22 +1,51 @@
 @font-face {
-	font-family: "DMSans";
-	src: url(assets/fonts/DMSans/DMSans-Regular.ttf) format("truetype");
+	font-family: "BodoniModa";
+	src: url(assets/fonts/BodoniModa/BodoniModa_28pt-Regular.ttf)
+		format("truetype");
 	font-weight: 400;
 }
 
 @font-face {
-	font-family: "DMSans";
-	src: url(assets/fonts/DMSans/DMSans-SemiBold.ttf) format("truetype");
+	font-family: "BodoniModa";
+	src: url(assets/fonts/BodoniModa/BodoniModa_28pt-SemiBold.ttf)
+		format("truetype");
 	font-weight: 600;
 }
 
 @font-face {
-	font-family: "DMSans";
-	src: url(assets/fonts/DMSans/DMSans-Bold.ttf) format("truetype");
+	font-family: "BodoniModa";
+	src: url(assets/fonts/BodoniModa/BodoniModa_28pt-Bold.ttf) format("truetype");
 	font-weight: 800;
 }
 
 @font-face {
 	font-family: "Halimun";
 	src: url(assets/fonts/Halimun/Halimun.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: "ImperialScript";
+	src: url(assets/fonts/ImperialScript/ImperialScript-Regular.ttf)
+		format("truetype");
+}
+
+@font-face {
+	font-family: "TBJMaltaMiniEdition";
+	src: url(assets/fonts/TBJMaltaMiniEdition/TBJMaltaMiniEdition-Regular.ttf)
+		format("truetype");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "TBJMaltaMiniEdition";
+	src: url(assets/fonts/TBJMaltaMiniEdition/TBJMaltaMiniEdition-SemiBold.ttf)
+		format("truetype");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "TBJMaltaMiniEdition";
+	src: url(assets/fonts/TBJMaltaMiniEdition/TBJMaltaMiniEdition-Bold.ttf)
+		format("truetype");
+	font-weight: 800;
 }

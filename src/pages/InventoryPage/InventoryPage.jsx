@@ -3,6 +3,7 @@ import "./InventoryPage.scss";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
 import Filter from "../../components/Filter/Filter";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -34,7 +35,7 @@ export default function InventoryPage() {
 
 	return (
 		<div className="products">
-			<h1 className="products__title">Inventory</h1>
+			<PageHeader title="products" />
 			<div className="products-wrapper">
 				<Filter categories={categories} />
 				<ProductList productList={productList} />

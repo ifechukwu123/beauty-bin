@@ -32,19 +32,18 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Header count={counter} content={notifObject} />
-			<main className="main">
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="home" element={<Navigate to="/" />} />
-					<Route path="products" element={<InventoryPage />} />
-					<Route path="products/add" element={<AddProductPage />} />
-					<Route path="products/:id" element={<ProductDetailsPage />} />
-					<Route path="products/:id/edit" element={<EditProductPage />} />
-					<Route path="wishlist" element={<WishlistPage />} />
-					<Route path="about" element={<AboutPage />} />
-					<Route path="*" element={<NotFoundPage />} />
-				</Routes>
-			</main>
+
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="home" element={<Navigate to="/" />} />
+				<Route path="products" element={<InventoryPage />} />
+				<Route path="products/add" element={<AddProductPage />} />
+				<Route path="products/:id" element={<ProductDetailsPage />} />
+				<Route path="products/:id/edit" element={<EditProductPage />} />
+				<Route path="wishlist" element={<WishlistPage />} />
+				<Route path="about" element={<AboutPage />} />
+				<Route path="*" element={<NotFoundPage />} />
+			</Routes>
 		</BrowserRouter>
 	);
 }

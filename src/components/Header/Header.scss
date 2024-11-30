@@ -3,11 +3,15 @@
 
 .header {
 	background-color: $primary-pink;
-	border-bottom: 1.5px solid $primary-black;
-	padding: 1rem 3rem;
+	border-bottom: $component-border;
+	padding: 1rem $desktop-padding;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	&--white {
+		background-color: $primary-white;
+	}
 
 	&__link {
 		text-decoration: none;

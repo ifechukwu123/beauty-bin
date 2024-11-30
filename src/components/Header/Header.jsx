@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import heartIcon from "../../assets/icons/heart.svg";
 import bellIcon from "../../assets/icons/bell.svg";
@@ -7,8 +7,12 @@ import "./Header.scss";
 
 export default function Header({ count, content }) {
 	console.log(content);
+	const location = useLocation();
+	const headerClassName =
+		location.pathname === "/" ? "header" : "header header--white";
+
 	return (
-		<header className="header">
+		<header className={headerClassName}>
 			<nav className="nav">
 				<img src={menuIcon} alt="A menu icon" className="header__icon" />
 			</nav>

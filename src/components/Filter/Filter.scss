@@ -1,3 +1,17 @@
+@use "../../styles/partials/variables" as *;
+
 .filter {
-	flex: 0.2;
+	border-right: $component-border;
+
+	&__reset {
+		margin-top: 10px;
+		padding-left: $desktop-padding;
+		font-family: "TBJMaltaMiniEdition";
+		font-size: 25px;
+		color: $secondary-pink;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }

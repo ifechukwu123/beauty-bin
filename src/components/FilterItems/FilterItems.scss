@@ -1,19 +1,20 @@
 @use "../../styles/partials/variables" as *;
 
 .filter-card {
-	margin-bottom: 50px;
+	width: 20vw;
 
 	&__name {
 		margin: 0;
+		font-family: "TBJMaltaMiniEdition";
 		text-transform: capitalize;
+		font-size: 25px;
 	}
 
 	&__header {
 		display: flex;
 		justify-content: space-between;
 		border-bottom: 1.5px solid $secondary-grey;
-		padding-bottom: 15px;
-		margin-bottom: 20px;
+		padding: 20px $desktop-padding;
 
 		&:hover {
 			cursor: pointer;
@@ -21,23 +22,22 @@
 	}
 
 	&__icon {
-		width: 1.5625rem;
+		width: 0.9375rem;
 	}
 
 	&__list {
-		margin: 0;
-		padding: 0;
+		padding: 0 0 0 $desktop-padding;
 		list-style: none;
 		display: flex;
 		flex-flow: row wrap;
+		margin: 20px 0px 40px;
 		gap: 20px;
 	}
 
 	&__list-item {
 		text-transform: capitalize;
 		border: 1px solid $primary-black;
-		width: max-content;
-		padding: 5px;
+		padding: 2px 10px;
 		border-radius: 15px;
 
 		&:hover {

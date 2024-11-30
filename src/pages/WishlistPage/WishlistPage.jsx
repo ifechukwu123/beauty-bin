@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./WishlistPage.scss";
 import axios from "axios";
 import WishItem from "../../components/WishItem/WishItem";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -29,7 +30,7 @@ export default function WishlistPage() {
 
 	return (
 		<div className="wishlist">
-			<h1 className="wishlist__title">Wishlist</h1>
+			<PageHeader title="wishlist" />
 			<ul className="wishlist__list">
 				{wishlist.map((wish) => (
 					<WishItem
