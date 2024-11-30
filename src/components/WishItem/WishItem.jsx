@@ -26,16 +26,15 @@ export default function WishItem({ wishlistItem, getWishList }) {
 	}
 
 	return (
-		<>
-			<article className="wishlistProduct-card">
-				<img
-					src={`${url}${image}`}
-					alt={`A picture of ${name} from ${brand}`}
-				/>
-				<h2>{brand}</h2>
-				<span>{name}</span>
-				<button onClick={handleShow}>Delete</button>
-			</article>
+		<article className="wishlistProduct-card">
+			<img
+				src={`${url}${image}`}
+				alt={`A picture of ${name} from ${brand}`}
+				className="wishlistProduct-card__image"
+			/>
+			<h2 className="wishlistProduct-card__title">{brand}</h2>
+			<span className="wishlistProduct-card__name">{name}</span>
+			<button onClick={handleShow}>Delete</button>
 			<DeleteModal
 				name={name}
 				type="wishlist"
@@ -43,6 +42,6 @@ export default function WishItem({ wishlistItem, getWishList }) {
 				handleDelete={handleDelete}
 				handleClose={handleShow}
 			/>
-		</>
+		</article>
 	);
 }

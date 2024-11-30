@@ -1,7 +1,37 @@
 .homepage {
-	display: flex;
-	justify-content: space-between;
-	height: 100vh;
+	height: 90vh;
 	padding: 15px;
-	align-items: center;
+	position: relative;
+
+	&__sticker {
+		position: absolute;
+		width: 250px;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&--products {
+			right: 200px; //give them flexible units
+			top: 100px;
+		}
+
+		&--about {
+			bottom: 50px;
+			right: 100px;
+			width: 350px;
+		}
+
+		&--wishlist {
+			bottom: 50px;
+			left: 200px;
+			width: 350px;
+		}
+
+		&--add {
+			top: 10px;
+			left: 120px;
+			width: 400px;
+		}
+	}
 }

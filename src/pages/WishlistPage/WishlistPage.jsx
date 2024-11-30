@@ -29,7 +29,7 @@ export default function WishlistPage() {
 
 	return (
 		<div className="wishlist">
-			<h1>Wishlist</h1>
+			<h1 className="wishlist__title">Wishlist</h1>
 			<ul className="wishlist__list">
 				{wishlist.map((wish) => (
 					<WishItem

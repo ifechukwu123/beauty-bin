@@ -2,25 +2,30 @@ import { useEffect, useState } from "react";
 import "./InventoryPage.scss";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
+import Filter from "../../components/Filter/Filter";
 
 const url = import.meta.env.VITE_API_URL;
 
 export default function InventoryPage() {
 	const [productList, setProductList] = useState([]);
+	const [categories, setCategories] = useState([]);
 	const [fetched, setFetched] = useState(false);
 
-	const getProducts = async () => {
+	const getProductsCategories = async () => {
 		try {
-			const response = await axios.get(`${url}/products`);
-			setProductList(response.data);
+			const products = await axios.get(`${url}/products`);
+			setProductList(products.data);
+
+			const categories = await axios.get(`${url}/categories`);
+			setCategories(categories.data);
 			setFetched(true);
 		} catch (error) {
-			console.error(`Unable to retrieve products: ${error}`);
+			console.error(`Unable to retrieve products & categories: ${error}`);
 		}
 	};
 
 	useEffect(() => {
-		getProducts();
+		getProductsCategories();
 	}, []);
 
 	if (!fetched) {
@@ -29,8 +34,11 @@ export default function InventoryPage() {
 
 	return (
 		<div className="products">
-			<h1>Inventory</h1>
-			<ProductList productList={productList} />
+			<h1 className="products__title">Inventory</h1>
+			<div className="products-wrapper">
+				<Filter categories={categories} />
+				<ProductList productList={productList} />
+			</div>
 		</div>
 	);
 }
