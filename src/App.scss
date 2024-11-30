@@ -1,6 +1,7 @@
 @use "./styles/partials/globals";
+@use "./styles/partials/variables" as *;
 
 .main {
-	border: 4px solid #1e1e1e;
-	border-radius: 15px;
+	border: 1.5px solid $primary-black;
+	background-color: $primary-white;
 }
