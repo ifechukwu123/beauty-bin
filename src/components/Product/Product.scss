@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 
 .product-card {
-	border: 0.5px solid $primary-black;
+	border: $component-border;
 	border-radius: 200px;
 	display: flex;
 	flex-direction: column;

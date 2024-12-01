@@ -28,14 +28,16 @@ export default function WishItem({ wishlistItem, getWishList }) {
 
 	return (
 		<article className="wishlistProduct-card">
-			<img
-				src={`${url}${image}`}
-				alt={`A picture of ${name} from ${brand}`}
-				className="wishlistProduct-card__image"
-			/>
-			<div className="wishlistProduct-card__info">
-				<h2 className="wishlistProduct-card__name">{name}</h2>
-				<span className="wishlistProduct-card__brand">{brand}</span>
+			<div className="wishlistProduct-card__info-container">
+				<img
+					src={`${url}${image}`}
+					alt={`A picture of ${name} from ${brand}`}
+					className="wishlistProduct-card__image"
+				/>
+				<div className="wishlistProduct-card__info">
+					<h2 className="wishlistProduct-card__name">{name}</h2>
+					<span className="wishlistProduct-card__brand">{brand}</span>
+				</div>
 			</div>
 
 			<img

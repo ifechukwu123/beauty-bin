@@ -2,43 +2,47 @@
 
 .wishlistProduct-card {
 	border: $component-border;
-	width: 25vw;
-	min-width: 300px;
-	//height: 400px;
-	padding: 40px 20px;
+	border-radius: 200px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	align-items: center;
-	justify-content: space-between;
+	padding: 40px;
+	overflow: hidden;
+
+	gap: 20px;
+	max-width: 250px;
+	height: 400px;
 
 	&__image {
-		width: 50%;
-		margin-bottom: 50px;
+		width: 100%;
+		margin-bottom: 15px;
 	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		gap: 5px;
-		margin-bottom: 20px;
-		width: 80%;
 	}
 
 	&__name {
 		font-weight: 400;
-		font-size: 20px;
+		font-size: 14px;
 		margin: 0;
+		max-height: 66px;
+		overflow: auto;
 	}
 
 	&__brand {
 		color: $secondary-ash;
+		font-family: "TBJMaltaMiniEdition";
+		text-transform: uppercase;
 		align-self: flex-end;
-		font-size: 18px;
+		font-size: 20px;
 	}
 
 	&__icon {
 		width: 25px;
-		align-self: flex-start;
 
 		&:hover {
 			cursor: pointer;
