@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables" as *;
+
+.status {
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	&--red {
+		color: $status-red;
+	}
+
+	&--green {
+		color: $status-green;
+	}
+
+	&--orange {
+		color: $status-orange;
+	}
+
+	&__icon {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+
+		&--red {
+			background-color: $status-red;
+		}
+
+		&--green {
+			background-color: $status-green;
+		}
+
+		&--orange {
+			background-color: $status-orange;
+		}
+	}
+}

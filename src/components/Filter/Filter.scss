@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 
 .filter {
-	border-right: $component-border;
+	border-right: $separator-border;
 
 	&__reset {
 		margin-top: 10px;

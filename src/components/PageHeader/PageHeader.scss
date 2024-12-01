@@ -1,6 +1,6 @@
 @use "../../styles/partials/variables" as *;
 
 .pageHeader {
-	border-bottom: $component-border;
+	border-bottom: $separator-border;
 	padding: 1rem $desktop-padding 0.5rem;
 }

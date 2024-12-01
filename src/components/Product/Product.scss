@@ -1,39 +1,48 @@
 @use "../../styles/partials/variables" as *;
 
 .product-card {
-	border: 1px solid $primary-black;
-	width: 25vw;
-	min-width: 300px;
-	//height: 400px;
-	padding: 40px 20px;
+	border: 0.5px solid $primary-black;
+	border-radius: 200px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+	gap: 20px;
+	max-width: 250px;
+	height: 450px;
 
 	&__image {
-		width: 50%;
-		margin-bottom: 50px;
+		margin-bottom: 15px;
+		width: 100%;
+	}
+
+	&__info-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		gap: 5px;
-		margin-bottom: 20px;
-		width: 80%;
 	}
 
 	&__brand {
 		color: $secondary-ash;
+		font-family: "TBJMaltaMiniEdition";
+		text-transform: uppercase;
 		align-self: flex-end;
-		font-size: 18px;
+		font-size: 20px;
 	}
 
 	&__name {
 		font-weight: 400;
-		font-size: 20px;
+		font-size: 14px;
 		margin: 0;
+		max-height: 86px;
+		overflow: auto;
 	}
 
 	&__icon-wrapper {
@@ -42,7 +51,8 @@
 		width: 3.125rem;
 		height: 3.125rem;
 		border-radius: 50%;
-		background-color: $primary-pink;
+		background-color: $primary-white;
+		border: $component-border;
 
 		&:hover {
 			background-color: $secondary-pink;
@@ -51,9 +61,5 @@
 
 	&__icon {
 		width: 1.5625rem;
-	}
-
-	&__link {
-		align-self: flex-end;
 	}
 }

@@ -10,6 +10,10 @@ $secondary-grey: #dfdfdf;
 $secondary-green: #003d2e;
 $secondary-light-green: #4d776d;
 
+$status-red: red;
+$status-green: green;
+$status-orange: orange;
+
 //font-size
 $h1-font-size: 3.125rem;
 
@@ -17,4 +21,5 @@ $h1-font-size: 3.125rem;
 $desktop-padding: 3.5rem;
 
 //borders
-$component-border: 1.5px solid $primary-black;
+$separator-border: 1.5px solid $primary-black;
+$component-border: 0.5px solid $primary-black;

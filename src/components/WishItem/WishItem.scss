@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 
 .wishlistProduct-card {
-	border: 1px solid $primary-black;
+	border: $component-border;
 	width: 25vw;
 	min-width: 300px;
 	//height: 400px;

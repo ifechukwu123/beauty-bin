@@ -12,6 +12,8 @@ export default function InventoryPage() {
 	const [categories, setCategories] = useState([]);
 	const [fetched, setFetched] = useState(false);
 
+	//make state to hide the filter
+
 	const getProductsCategories = async () => {
 		try {
 			const products = await axios.get(`${url}/products`);
