@@ -3,6 +3,7 @@ import "./ProductDetailsPage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 export default function ProductDetailsPage() {
@@ -31,9 +32,11 @@ export default function ProductDetailsPage() {
 	}
 
 	return (
-		<div>
-			<h1>Product Details</h1>
-			<ProductDetails product={product} />
+		<div className="product-details">
+			<PageHeader title="Product Details" />
+			<div className="product-details__container">
+				<ProductDetails product={product} />
+			</div>
 		</div>
 	);
 }

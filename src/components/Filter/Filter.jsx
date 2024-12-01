@@ -31,7 +31,7 @@ export default function Filter({ categories }) {
 			{selected.length > 0 && (
 				<div className="filter__reset" onClick={handleOnClick}>
 					{" "}
-					X Resest filters
+					X Reset filters
 				</div>
 			)}
 		</div>

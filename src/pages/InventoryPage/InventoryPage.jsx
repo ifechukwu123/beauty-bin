@@ -13,6 +13,7 @@ export default function InventoryPage() {
 	const [fetched, setFetched] = useState(false);
 
 	//make state to hide the filter
+	//make everything stick expect the products
 
 	const getProductsCategories = async () => {
 		try {
@@ -37,7 +38,7 @@ export default function InventoryPage() {
 
 	return (
 		<div className="products">
-			<PageHeader title="products" />
+			<PageHeader title="inventory" />
 			<div className="products-wrapper">
 				<Filter categories={categories} />
 				<ProductList productList={productList} />

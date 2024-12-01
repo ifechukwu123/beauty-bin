@@ -10,7 +10,9 @@ const url = import.meta.env.VITE_API_URL;
 export default function ProductDetails({ product }) {
 	let navigate = useNavigate();
 	const [show, setShow] = useState(false);
+	const [inWishlist, setInWishlist] = useState(false);
 
+	console.log(product);
 	let {
 		batchNumber,
 		brand,
@@ -25,14 +27,36 @@ export default function ProductDetails({ product }) {
 	dateOpened = new Date(dateOpened).toDateString();
 	expirationDate = new Date(expirationDate).toDateString();
 
+	let today = new Date();
+	let monthFromToday = new Date(today);
+	monthFromToday.setMonth(today.getMonth() + 1);
+	today = today.toISOString().split("T")[0];
+	monthFromToday = monthFromToday.toISOString().split("T")[0];
+
+	let expiryDate = product.expirationDate.split("T")[0];
+	let color;
+
+	if (expiryDate <= today) {
+		color = "red";
+	} else if (expiryDate <= monthFromToday) {
+		color = "orange";
+	} else {
+		color = "green";
+	}
+
 	async function handleAddWish() {
+		if (inWishlist) {
+			return;
+		}
+		console.log("hey");
 		try {
 			await axios.post(`${url}/wishlist`, {
 				name,
 				brand,
 				image,
 			});
-			//Modal to show that it was added to wishlist or something. Maybe change the button to reflect "Added to wishlist"
+			//add functionality to send product id to back end so no duplicates in wishlist
+			setInWishlist(true);
 		} catch (error) {
 			console.error(`Unable to add product to wishlist: ${error}`);
 		}
@@ -70,40 +94,62 @@ export default function ProductDetails({ product }) {
 					/>
 				</Link>
 			</div>
-			<div className="productDetails__info-container">
-				<img
-					src={`${url}${image}`}
-					alt={`A picture of ${name} from ${brand} `}
-				/>
-				<div className="productDetails__info">
-					<div>
-						<h3>Name</h3>
-						<span>{name}</span>
+			<div className="productDetails-content">
+				<div className="productDetails-container">
+					<div
+						className={`productDetails__image-wrapper productDetails__image-wrapper--${color}`}
+					>
+						<img
+							src={`${url}${image}`}
+							alt={`A picture of ${name} from ${brand} `}
+							className="productDetails__image"
+						/>
 					</div>
-					<div>
-						<h3>Brand</h3>
-						<span>{brand}</span>
-					</div>
-					<div>
-						<h3>Category</h3>
-						<span>{category}</span>
-					</div>
-					<div>
-						<h3>Batch Number</h3>
-						<span>{batchNumber}</span>
-					</div>
-					<div>
-						<h3>Date Opened</h3>
-						<span>{dateOpened}</span>
-					</div>
-					<div>
-						<h3>Expiration Date</h3>
-						<span>{expirationDate}</span>
+					<div className="productDetails__info-container">
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Name</h3>
+							<span className="productDetails__description">{name}</span>
+						</div>
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Brand</h3>
+							<span className="productDetails__description">{brand}</span>
+						</div>
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Category</h3>
+							<span className="productDetails__description">{category}</span>
+						</div>
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Batch Number</h3>
+							<span className="productDetails__description">{batchNumber}</span>
+						</div>
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Date Opened</h3>
+							<span className="productDetails__description">{dateOpened}</span>
+						</div>
+						<div className="productDetails__info">
+							<h3 className="productDetails__title">Expiration Date</h3>
+							<span
+								className={`productDetails__description productDetails__description--${color}`}
+							>
+								{expirationDate}
+							</span>
+						</div>
 					</div>
 				</div>
+				<div className="productDetails__button-container">
+					<div
+						onClick={handleAddWish}
+						className={`productDetails__wishlist ${
+							inWishlist ? "productDetails__wishlist--added" : ""
+						}`}
+					>
+						{inWishlist ? "Added to wishlist" : "Add to wishlist"}
+					</div>
+					<button onClick={handleShow} className="productDetails__button">
+						Delete
+					</button>
+				</div>
 			</div>
-			<button onClick={handleAddWish}>Add to wishlist</button>
-			<button onClick={handleShow}>Delete</button>
 
 			<DeleteModal
 				name={name}

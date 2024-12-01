@@ -1,20 +1,122 @@
+@use "../../styles/partials/variables" as *;
+
 .productDetails {
+	border: $separator-border;
+
 	&__header {
 		display: flex;
-		justify-content: space-around;
-		margin-bottom: 20px;
+		justify-content: space-between;
+		background-color: $primary-pink;
+		border-bottom: $separator-border;
+		padding: 1rem 2rem;
+	}
+
+	&-content {
+		padding: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 35px;
+	}
+
+	&-container {
+		display: flex;
+		gap: 100px;
 	}
 
 	&__info-container {
 		display: flex;
-		gap: 50px;
+		flex-direction: column;
+		justify-content: space-around;
+		flex: 1;
+	}
 
-		img {
-			height: 200px;
+	&__info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid $secondary-grey;
+		padding-bottom: 1rem;
+	}
+
+	&__title {
+		font-family: "TBJMaltaMiniEdition";
+		margin: 0;
+		text-transform: uppercase;
+		color: $secondary-ash;
+		font-size: 20px;
+	}
+
+	&__description {
+		text-transform: capitalize;
+
+		&--red {
+			color: $status-red;
 		}
+
+		&--green {
+			color: $status-green;
+		}
+
+		&--orange {
+			color: $status-orange;
+		}
+	}
+
+	&__image-wrapper {
+		display: flex;
+		padding: 80px 40px;
+		border-radius: 200px;
+		overflow: hidden;
+
+		&--red {
+			border: 0.5px solid $status-red;
+		}
+
+		&--green {
+			border: 0.5px solid $status-green;
+		}
+
+		&--orange {
+			border: 0.5px solid $status-orange;
+		}
+	}
+
+	&__image {
+		width: 200px;
+		align-self: center;
 	}
 
 	&__icon {
 		width: 25px;
+	}
+
+	&__button-container {
+		align-self: flex-end;
+		display: flex;
+		align-items: center;
+		gap: 40px;
+	}
+
+	&__wishlist {
+		font-size: 14px;
+
+		&:hover {
+			cursor: pointer;
+		}
+		&--added {
+			color: $status-green;
+		}
+	}
+
+	&__button {
+		border: $component-border;
+		background-color: $primary-white;
+		padding: 4px 16px;
+		border-radius: 18px;
+		font-size: 14px;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
