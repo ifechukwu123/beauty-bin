@@ -2,6 +2,8 @@ import "./ProductForm.scss";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import cancelIcon from "../../assets/icons/cross.svg";
+import rightArrowIcon from "../../assets/icons/arrow-right.svg";
 
 export default function ProductForm({ handleOnSubmit, product, page }) {
 	let navigate = useNavigate();
@@ -11,137 +13,184 @@ export default function ProductForm({ handleOnSubmit, product, page }) {
 	}
 
 	return (
-		<div className="productForm">
-			<h1 className="productForm__title">
-				{page === "edit" ? "edit product" : "add a new product"}
-			</h1>
-			<Formik
-				initialValues={{ ...product }}
-				validationSchema={Yup.object({
-					name: Yup.string().trim().required("Required"),
-					brand: Yup.string().trim().required("Required"),
-					batchNumber: Yup.string().trim().required("Required"),
-					category: Yup.string()
-						.oneOf(["face", "lips", "eye", "other"])
-						.required("Required"),
-					dateOpened: Yup.string().required("Required"),
-					expirationDate: Yup.string().required("Required"), //add validation to make expiration date > than dateopened
-				})}
-				onSubmit={(values) => handleOnSubmit(values)}
-			>
-				{(formik) => (
-					<form onSubmit={formik.handleSubmit} className="form">
+		<Formik
+			initialValues={{ ...product }}
+			validationSchema={Yup.object({
+				name: Yup.string().trim().required("Required"),
+				brand: Yup.string().trim().required("Required"),
+				batchNumber: Yup.string().trim().required("Required"),
+				category: Yup.string()
+					.oneOf(["face", "lips", "eye", "other"])
+					.required("Required"),
+				dateOpened: Yup.string().required("Required"),
+				expirationDate: Yup.string().required("Required"), //add validation to make expiration date > than dateopened
+			})}
+			onSubmit={(values) => handleOnSubmit(values)}
+		>
+			{(formik) => (
+				<form onSubmit={formik.handleSubmit} className="form">
+					<img
+						src={cancelIcon}
+						alt="A cancel cross icon "
+						className="form__icon form__icon--cross"
+						onClick={handleOnClick}
+					/>
+					<div className="form__input-container">
 						<label htmlFor="name" className="form__label">
 							Name:
-							<input
-								type="text"
-								name="name"
-								id="name"
-								placeholder="Enter name"
-								className="form__field form__field--name"
-								{...formik.getFieldProps("name")}
-							/>
-						</label>
+						</label>{" "}
+						<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Enter name"
+							className={
+								formik.touched.name && formik.errors.name
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("name")}
+						/>
 						{formik.touched.name && formik.errors.name ? (
-							<div>{formik.errors.name}</div>
+							<div className="form--error">{formik.errors.name}</div>
 						) : null}
+					</div>
+					<div className="form__input-container">
 						<label htmlFor="brand" className="form__label">
 							Brand:
-							<input
-								type="text"
-								name="brand"
-								id="brand"
-								placeholder="Enter brand"
-								className="form__field form__field--brand"
-								{...formik.getFieldProps("brand")}
-							/>
 						</label>
+						<input
+							type="text"
+							name="brand"
+							id="brand"
+							placeholder="Enter brand"
+							className={
+								formik.touched.brand && formik.errors.brand
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("brand")}
+						/>
 						{formik.touched.brand && formik.errors.brand ? (
-							<div>{formik.errors.brand}</div>
+							<div className="form--error">{formik.errors.brand}</div>
 						) : null}
+					</div>
+
+					<div className="form__input-container">
 						<label htmlFor="batchNumber" className="form__label">
 							Batch number:{" "}
-							<input
-								type="text"
-								name="batchNumber"
-								id="batchNumber"
-								placeholder="Enter batch number"
-								className="form__field form__field--batchNumber"
-								{...formik.getFieldProps("batchNumber")}
-							/>
 						</label>
+						<input
+							type="text"
+							name="batchNumber"
+							id="batchNumber"
+							placeholder="Enter batch number"
+							className={
+								formik.touched.batchNumber && formik.errors.batchNumber
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("batchNumber")}
+						/>
 						{formik.touched.batchNumber && formik.errors.batchNumber ? (
-							<div>{formik.errors.batchNumber}</div>
+							<div className="form--error">{formik.errors.batchNumber}</div>
 						) : null}
+					</div>
+
+					<div className="form__input-container">
 						<label htmlFor="category" className="form__label">
-							Category:{" "}
-							<select
-								name="category"
-								id="category"
-								className="form__field form__field--category"
-								{...formik.getFieldProps("category")}
-							>
-								<option value="" selected disabled hidden>
-									Choose here
-								</option>
-								<option value="face" className="form__option">
-									face
-								</option>
-								<option value="lips" className="form__option">
-									lips
-								</option>
-								<option value="eye" className="form__option">
-									eye
-								</option>
-								<option value="other" className="form__option">
-									other
-								</option>
-							</select>
+							Category:
 						</label>
+						<select
+							name="category"
+							id="category"
+							className={
+								formik.touched.category && formik.errors.category
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("category")}
+						>
+							<option
+								value=""
+								selected
+								disabled
+								hidden
+								className="form__option--hidden"
+							>
+								Choose here
+							</option>
+							<option value="face" className="form__option">
+								face
+							</option>
+							<option value="lips" className="form__option">
+								lips
+							</option>
+							<option value="eye" className="form__option">
+								eye
+							</option>
+							<option value="other" className="form__option">
+								other
+							</option>
+						</select>
 						{formik.touched.category && formik.errors.category ? (
-							<div>{formik.errors.category}</div>
+							<div className="form--error">{formik.errors.category}</div>
 						) : null}
+					</div>
+
+					<div className="form__input-container">
 						<label htmlFor="dateOpened" className="form__label">
 							Date Opened:
-							<input
-								type="date"
-								name="dateOpened"
-								id="dateOpened"
-								className="form__field form__field--dateOpened"
-								{...formik.getFieldProps("dateOpened")}
-							/>
 						</label>
+						<input
+							type="date"
+							name="dateOpened"
+							id="dateOpened"
+							className={
+								formik.touched.dateOpened && formik.errors.dateOpened
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("dateOpened")}
+						/>
 						{formik.touched.dateOpened && formik.errors.dateOpened ? (
-							<div>{formik.errors.dateOpened}</div>
+							<div className="form--error">{formik.errors.dateOpened}</div>
 						) : null}
+					</div>
+
+					<div className="form__input-container">
 						<label htmlFor="expirationDate" className="form__label">
 							Expiration date:
-							<input
-								type="date"
-								name="expirationDate"
-								id="expirationDate"
-								className="form__field form__field--expirationDate"
-								{...formik.getFieldProps("expirationDate")}
-							/>
 						</label>
+						<input
+							type="date"
+							name="expirationDate"
+							id="expirationDate"
+							className={
+								formik.touched.expirationDate && formik.errors.expirationDate
+									? "form__field form__field--error"
+									: "form__field"
+							}
+							{...formik.getFieldProps("expirationDate")}
+						/>
 						{formik.touched.expirationDate && formik.errors.expirationDate ? (
-							<div>{formik.errors.expirationDate}</div>
+							<div className="form--error">{formik.errors.expirationDate}</div>
 						) : null}
-						<div className="form__button-container">
-							<button
-								type="button"
-								onClick={handleOnClick}
-								className="form__button"
-							>
-								Cancel
-							</button>
-							<button type="submit" className="form__button">
-								{page === "edit" ? "Save" : "Add"}
-							</button>
-						</div>
-					</form>
-				)}
-			</Formik>
-		</div>
+					</div>
+
+					<div className="form__button-container">
+						{page === "edit" ? "Save" : "Add"}
+						<button type="submit" className="form__button">
+							{/* {page === "edit" ? "Save" : "Add"} */}
+							<img
+								src={rightArrowIcon}
+								alt="A right arrow icon"
+								className="form__icon form__icon--arrow"
+							/>
+						</button>
+					</div>
+				</form>
+			)}
+		</Formik>
 	);
 }

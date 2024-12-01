@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "./EditProductPage.scss";
 import ProductForm from "../../components/ProductForm/ProductForm";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -56,11 +57,14 @@ export default function EditProductPage() {
 
 	return (
 		<div className="editProduct">
-			<ProductForm
-				handleOnSubmit={handleOnSubmit}
-				product={newProduct}
-				page="edit"
-			/>
+			<PageHeader title="edit product" />
+			<div className="editProduct__form-container">
+				<ProductForm
+					handleOnSubmit={handleOnSubmit}
+					product={newProduct}
+					page="edit"
+				/>
+			</div>
 		</div>
 	);
 }

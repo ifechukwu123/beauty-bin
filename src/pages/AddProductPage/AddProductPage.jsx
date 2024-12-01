@@ -1,6 +1,7 @@
 import axios from "axios";
 import "./AddProductPage.scss";
 import { useNavigate } from "react-router-dom";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import ProductForm from "../../components/ProductForm/ProductForm";
 
 const url = import.meta.env.VITE_API_URL;
@@ -28,11 +29,14 @@ export default function AddProductPage() {
 
 	return (
 		<div className="addProduct">
-			<ProductForm
-				handleOnSubmit={handleOnSubmit}
-				product={product}
-				page="add"
-			/>
+			<PageHeader title="add a new product" />
+			<div className="addProduct__form-container">
+				<ProductForm
+					handleOnSubmit={handleOnSubmit}
+					product={product}
+					page="add"
+				/>
+			</div>
 		</div>
 	);
 }
