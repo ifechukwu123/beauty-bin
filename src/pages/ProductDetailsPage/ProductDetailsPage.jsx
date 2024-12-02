@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDetailsPage.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -11,12 +11,17 @@ export default function ProductDetailsPage() {
 	const [product, setProduct] = useState([]);
 	const [fetched, setFetched] = useState(false);
 
+	let navigate = useNavigate();
+
 	const getProductDetails = async () => {
 		try {
 			const response = await axios.get(`${url}/products/${id}`);
 			setProduct(response.data);
 			setFetched(true);
 		} catch (error) {
+			if (error.status === 404) {
+				navigate("/notFound");
+			}
 			console.error(
 				`Unable to retrieve details for product with id ${id}: ${error}`
 			);

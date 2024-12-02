@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
-import heartIcon from "../../assets/icons/heart.svg";
+import starIcon from "../../assets/icons/star.svg";
 import bellIcon from "../../assets/icons/bell.svg";
 import avatar from "../../assets/icons/user-female.svg";
 import "./Header.scss";
@@ -25,11 +25,11 @@ export default function Header({ count, content }) {
 			</Link>
 
 			<div className="header__icon-container">
-				<Link to="/wishlist" className="header__link header__link--heart">
+				<Link to="/wishlist" className="header__link header__link--star">
 					<img
-						src={heartIcon}
-						alt="A heart icon"
-						className="header__icon header__icon--heart"
+						src={starIcon}
+						alt="A star icon"
+						className="header__icon header__icon--star"
 					/>
 				</Link>
 

@@ -28,6 +28,9 @@ export default function EditProductPage() {
 			setProduct(response.data);
 			setFetched(true);
 		} catch (error) {
+			if (error.status === 404) {
+				navigate("/notFound");
+			}
 			console.error(
 				`Unable to retrieve details for product with id ${id}: ${error}`
 			);

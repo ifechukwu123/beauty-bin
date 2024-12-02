@@ -1,0 +1,51 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/variables" as *;
+
+.notFound {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: $desktop-padding 0;
+
+	&__status {
+		display: flex;
+		gap: 0.625rem;
+		margin-top: -4.1875rem;
+	}
+
+	&__status-text {
+		display: block;
+		font-family: "TBJMaltaMiniEdition";
+		font-weight: 800;
+		margin-top: 3.125rem;
+		font-size: 18.75rem;
+	}
+
+	&__icon {
+		width: 12.5rem;
+	}
+
+	&__message {
+		font-size: 1.25rem;
+		margin-top: -3.125rem;
+	}
+
+	&__button {
+		position: relative;
+		top: 4.375rem;
+		margin-top: 1.25rem;
+		background-color: $primary-pink;
+		border: $component-border;
+		padding: 0.25rem 1rem;
+		border-radius: 1.125rem;
+		font-size: 0.875rem;
+		text-transform: capitalize;
+
+		&:hover {
+			background-color: $secondary-pink;
+			cursor: pointer;
+		}
+	}
+}

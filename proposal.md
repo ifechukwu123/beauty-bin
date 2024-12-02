@@ -32,6 +32,7 @@ List technologies that will be used in your app, including any libraries to save
 
 - Javascript
 - Socket.IO
+
 - Client libraries
 
   - React

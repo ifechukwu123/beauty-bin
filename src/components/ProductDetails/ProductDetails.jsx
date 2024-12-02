@@ -12,7 +12,6 @@ export default function ProductDetails({ product }) {
 	const [show, setShow] = useState(false);
 	const [inWishlist, setInWishlist] = useState(false);
 
-	console.log(product);
 	let {
 		batchNumber,
 		brand,
@@ -48,14 +47,15 @@ export default function ProductDetails({ product }) {
 		if (inWishlist) {
 			return;
 		}
-		console.log("hey");
+
 		try {
 			await axios.post(`${url}/wishlist`, {
 				name,
 				brand,
 				image,
+				id,
 			});
-			//add functionality to send product id to back end so no duplicates in wishlist
+
 			setInWishlist(true);
 		} catch (error) {
 			console.error(`Unable to add product to wishlist: ${error}`);
