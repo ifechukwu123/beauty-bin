@@ -1,82 +1,130 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
 
-.form {
+.form-container {
 	display: flex;
-	flex-direction: column;
-	border: 1px solid black;
-	padding: 20px 100px;
-	position: relative;
+	border: 1px solid $primary-black;
 
-	&--error {
-		color: $secondary-pink;
+	.form__image-wrapper {
+		background-color: $primary-pink;
+		width: 62px;
 	}
 
-	&__label {
-		font-family: "TBJMaltaMiniEdition";
-		font-size: 25px;
-	}
-
-	&__icon {
-		width: 20px;
-		&--cross {
-		}
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	&__input-container {
+	.form {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 20px;
-		gap: 4px;
-	}
-
-	&__field {
-		border: 1.5px solid $secondary-grey;
-		border-radius: 30px;
-		padding: 0.5rem 1.5rem;
-
-		&:active,
-		&:focus {
-			border-color: $primary-black;
-			outline: none;
-		}
+		border-left: 1px solid black;
+		padding: 65px 70px 30px;
+		position: relative;
+		flex: 1;
 
 		&--error {
-			border-color: $secondary-pink;
+			color: $secondary-pink;
+			font-size: 13px;
+			position: absolute;
+			left: 10px;
+			bottom: -20px;
 		}
 
-		&::placeholder {
-			font-family: "BodoniModa";
-			color: $secondary-ash;
-			font-size: 1.125rem;
+		&__label {
+			font-family: "TBJMaltaMiniEdition";
+			font-size: 25px;
+			width: 100px;
+			text-transform: capitalize;
 		}
-	}
 
-	&__option {
-		text-transform: capitalize;
-	}
+		&__icon {
+			width: 20px;
+			&--cross {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
 
-	&__button-container {
-		align-self: flex-end;
-	}
+			&:hover {
+				cursor: pointer;
+			}
+		}
 
-	&__button {
-		border: none;
-		background-color: $primary-pink;
-		padding: 4px 16px;
-		border-radius: 18px;
-		font-size: 18px;
-		width: min-content;
+		&__input-container {
+			display: flex;
+			gap: 30px;
+			margin-bottom: 32px;
+			align-items: center;
+		}
 
-		margin-top: 8px;
+		&__field-wrapper {
+			position: relative;
+			flex: 1;
+			display: flex;
+		}
 
-		&:hover {
-			background-color: $secondary-pink;
-			cursor: pointer;
+		&__field {
+			border: 1.5px solid $secondary-grey;
+			border-radius: 30px;
+			padding: 0.3rem 1rem;
+			flex: 1;
+
+			&:active,
+			&:focus {
+				border-color: $primary-black;
+				outline: none;
+			}
+
+			&--error {
+				border-color: $secondary-pink;
+			}
+
+			&::placeholder {
+				font-family: "BodoniModa";
+				color: $secondary-ash;
+				font-size: 16px;
+			}
+		}
+
+		&__option {
+			text-transform: capitalize;
+		}
+
+		&__button-container {
+			align-self: flex-end;
+			display: flex;
+			align-items: center;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		&__button {
+			border: none;
+			background-color: $primary-white;
+		}
+
+		&__button-content {
+			//gap: 5px;
+			background-color: pink;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			border-radius: 50%;
+
+			&--active {
+				padding: 0.5rem 1rem;
+				gap: 5px;
+				border-radius: 30px;
+				width: unset;
+				height: unset;
+			}
+
+			&:hover {
+				background-color: $secondary-pink;
+			}
+		}
+
+		&__button-text {
+			font-size: 16px;
 		}
 	}
 }
