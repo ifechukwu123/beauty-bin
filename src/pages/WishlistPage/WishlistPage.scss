@@ -6,8 +6,10 @@
 		flex-flow: row wrap;
 		justify-content: center;
 		list-style: none;
-		gap: 50px;
+		gap: 3.125rem;
 		margin: 0;
-		padding: 40px $desktop-padding;
+		padding: 2.5rem $desktop-padding;
+		max-height: 90vh;
+		overflow-y: auto;
 	}
 }

@@ -15,12 +15,12 @@
 		padding: 40px;
 		display: flex;
 		flex-direction: column;
-		gap: 35px;
+		gap: 2.1875rem;
 	}
 
 	&-container {
 		display: flex;
-		gap: 100px;
+		gap: 6.25rem;
 	}
 
 	&__info-container {
@@ -43,7 +43,7 @@
 		margin: 0;
 		text-transform: uppercase;
 		color: $secondary-ash;
-		font-size: 20px;
+		font-size: 1.25rem;
 	}
 
 	&__description {
@@ -64,41 +64,41 @@
 
 	&__image-wrapper {
 		display: flex;
-		padding: 80px 40px;
-		border-radius: 200px;
+		padding: 5rem 2.5rem;
+		border-radius: 12.5rem;
 		overflow: hidden;
 
 		&--red {
-			border: 0.5px solid $status-red;
+			border: 1.5px solid $status-red;
 		}
 
 		&--green {
-			border: 0.5px solid $status-green;
+			border: 1.5px solid $status-green;
 		}
 
 		&--orange {
-			border: 0.5px solid $status-orange;
+			border: 1.5px solid $status-orange;
 		}
 	}
 
 	&__image {
-		width: 200px;
+		width: 12.5rem;
 		align-self: center;
 	}
 
 	&__icon {
-		width: 25px;
+		width: 1.5625rem;
 	}
 
 	&__button-container {
 		align-self: flex-end;
 		display: flex;
 		align-items: center;
-		gap: 40px;
+		gap: 2.5rem;
 	}
 
 	&__wishlist {
-		font-size: 14px;
+		font-size: 0.875rem;
 
 		&:hover {
 			cursor: pointer;
@@ -110,13 +110,14 @@
 
 	&__button {
 		border: $component-border;
-		background-color: $primary-white;
-		padding: 4px 16px;
-		border-radius: 18px;
-		font-size: 14px;
+		background-color: $primary-pink;
+		padding: 0.25rem 1rem;
+		border-radius: 1.125rem;
+		font-size: 0.875rem;
 
 		&:hover {
 			cursor: pointer;
+			background-color: $secondary-pink;
 		}
 	}
 }

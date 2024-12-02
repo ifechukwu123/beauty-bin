@@ -18,48 +18,21 @@
 		color: $primary-black;
 
 		&--logo {
-			margin-right: -80px;
+			margin-right: -5rem;
 		}
 	}
 
 	&__icon {
-		width: 25px;
-
-		&--heart,
-		&--bell {
-			position: relative;
-
-			&::after {
-				content: "";
-				position: absolute;
-				bottom: -4px;
-				left: 0;
-				height: 1px;
-				background: yellow;
-				width: 1px;
-			}
-
-			&:hover::after {
-				animation: borderBottom 0.5s ease-out forwards alternate;
-			}
-		}
-	}
-	@keyframes borderBottom {
-		0% {
-			width: 0;
-		}
-		100% {
-			width: 100%;
-		}
+		width: 1.5625rem;
 	}
 
 	&__logo {
 		font-family: "Halimun";
-		font-size: 25px;
+		font-size: 1.5625rem;
 	}
 
 	&__icon-container {
 		display: flex;
-		gap: 40px;
+		gap: 2.5rem;
 	}
 }

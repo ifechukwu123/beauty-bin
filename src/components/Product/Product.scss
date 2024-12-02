@@ -2,18 +2,22 @@
 
 .product-card {
 	border: $component-border;
-	border-radius: 200px;
+	border-radius: 12.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	padding: 30px 40px;
-	gap: 20px;
-	max-width: 250px;
-	height: 450px;
+	padding: 1.875rem 2.5rem;
+	gap: 1.25rem;
+	max-width: 15.625rem;
+	height: 28.125rem;
+
+	&:hover {
+		box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 1);
+	}
 
 	&__image {
-		margin-bottom: 15px;
+		margin-bottom: 0.9375rem;
 		width: 100%;
 	}
 
@@ -34,14 +38,15 @@
 		font-family: "TBJMaltaMiniEdition";
 		text-transform: uppercase;
 		align-self: flex-end;
-		font-size: 20px;
+		font-size: 1.25rem;
+		font-weight: 600;
 	}
 
 	&__name {
 		font-weight: 400;
-		font-size: 14px;
+		font-size: 0.875rem;
 		margin: 0;
-		max-height: 86px;
+		max-height: 5.375rem;
 		overflow: auto;
 	}
 

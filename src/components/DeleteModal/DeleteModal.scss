@@ -15,7 +15,7 @@
 
 	&-container {
 		background-color: $primary-white;
-		padding: 60px 60px 30px;
+		padding: 3.75rem 3.75rem 1.875rem;
 		width: 60vw;
 		border: $separator-border;
 		display: flex;
@@ -34,13 +34,13 @@
 	}
 
 	&__button {
-		margin-top: 20px;
+		margin-top: 1.25rem;
 		align-self: flex-end;
 		background-color: $primary-pink;
 		border: $component-border;
-		padding: 4px 16px;
-		border-radius: 18px;
-		font-size: 14px;
+		padding: 0.25rem 1rem;
+		border-radius: 1.125rem;
+		font-size: 0.875rem;
 
 		&:hover {
 			background-color: $secondary-pink;
@@ -50,9 +50,9 @@
 
 	&__icon {
 		position: absolute;
-		width: 25px;
-		top: 25px;
-		right: 25px;
+		width: 1.5625rem;
+		top: 1.5625rem;
+		right: 1.5625rem;
 
 		&:hover {
 			cursor: pointer;

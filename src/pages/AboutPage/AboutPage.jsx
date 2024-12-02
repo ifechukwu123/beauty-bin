@@ -1,5 +1,6 @@
 import "./AboutPage.scss";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 export default function AboutPage() {
-	return <div>About</div>;
+	return <PageHeader title="about" />;
 }
