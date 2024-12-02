@@ -24,6 +24,10 @@
 
 	&__icon {
 		width: 1.5625rem;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	&__logo {
