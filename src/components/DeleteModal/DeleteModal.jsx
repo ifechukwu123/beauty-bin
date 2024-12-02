@@ -14,25 +14,25 @@ export default function DeleteModal({
 
 	return (
 		<div className="deleteModal">
-			<img
-				src={cancelIcon}
-				alt="A cancel icon"
-				className="deleteModal__icon"
-				onClick={handleClose}
-			/>
-			<h1 className="deleteModal__title">Delete {name}?</h1>
-			<p className="deleteModal__description">
-				Please confirm that you&apos;d like to delete {name} from your{" "}
-				{type === "inventory" ? "inventory" : "wishlist"}. You won&apos;t be
-				able to undo this action
-			</p>
-			<div className="deleteModal__button-container">
-				<button onClick={handleClose} className="deleteModal__button">
-					Cancel
-				</button>
-				<button onClick={handleDelete} className="deleteModal__button">
-					Delete
-				</button>
+			<div className="deleteModal-container">
+				<img
+					src={cancelIcon}
+					alt="A cancel icon"
+					className="deleteModal__icon"
+					onClick={handleClose}
+				/>
+				<div className="deleteModal-content">
+					<h1 className="deleteModal__title">Delete {name}?</h1>
+					<p className="deleteModal__description">
+						Please confirm that you&apos;d like to delete {name} from your{" "}
+						{type === "inventory" ? "inventory" : "wishlist"}. You won&apos;t be
+						able to undo this action.
+					</p>
+
+					<button onClick={handleDelete} className="deleteModal__button">
+						Delete
+					</button>
+				</div>
 			</div>
 		</div>
 	);
