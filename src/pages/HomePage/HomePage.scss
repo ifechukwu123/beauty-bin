@@ -4,9 +4,10 @@
 	background-color: $primary-pink;
 	flex: 1;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
-	padding: 0 $desktop-padding;
+	position: relative;
+	padding: 100px;
 
 	&__slogan {
 		display: flex;
@@ -29,59 +30,96 @@
 		}
 	}
 
+	&__link {
+		text-decoration: none;
+		color: $primary-black;
+
+		&:hover {
+			.homepage__sticker {
+				transform: scale(1.1);
+			}
+		}
+	}
+
 	&__sticker-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		gap: 100px;
-	}
+		gap: 50px;
 
-	&__sticker {
-		width: 250px;
-
-		&--add {
-			width: 400px;
+		&--one {
+			left: 10px;
 		}
 
-		&:hover {
-			transform: scale(1.1);
+		&--two {
+			right: 10px;
 		}
 	}
-}
 
-.homepage__copy {
-	padding: 15px;
-	//position: relative;
+	&__sticker-wrapper {
+		position: relative;
 
-	&__sticker {
-		position: absolute;
-		width: 250px;
-
-		&:hover {
-			transform: scale(1.1);
-		}
-
-		&--products {
-			right: 200px; //give them flexible units
-			top: 100px;
-		}
-
-		&--about {
-			bottom: 50px;
-			right: 100px;
-			width: 350px;
+		&--inventory {
+			left: 150px;
+			top: 10px;
 		}
 
 		&--wishlist {
-			bottom: 50px;
-			left: 200px;
-			width: 350px;
+			left: 120px;
+			bottom: 10px;
+		}
+
+		&--about {
+			right: 100px;
+		}
+		&--add {
+			right: 50px;
+			top: 10px;
+		}
+	}
+
+	&__sticker-text {
+		font-family: "TBJMaltaMiniEdition";
+		text-transform: uppercase;
+		font-size: 40px;
+		position: absolute;
+		display: block;
+		top: 40%;
+
+		&--inventory {
+			transform: rotate(-25deg);
+			top: 35%;
+			left: 25%;
+		}
+
+		&--wishlist {
+			transform: rotate(9deg);
+			left: 28%;
 		}
 
 		&--add {
-			top: 10px;
-			left: 120px;
-			width: 400px;
+			transform: rotate(25deg);
+			left: 22%;
+		}
+
+		&--about {
+			left: 38%;
+			transform: rotate(-5deg);
+		}
+	}
+
+	&__sticker {
+		width: 260px;
+
+		&--about {
+			width: 320px;
+		}
+
+		&--wishlist {
+			transform: rotate(5deg);
 		}
 	}
 }
