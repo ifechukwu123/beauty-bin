@@ -24,6 +24,33 @@
 
 	&__icon {
 		width: 25px;
+
+		&--heart,
+		&--bell {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -4px;
+				left: 0;
+				height: 1px;
+				background: yellow;
+				width: 1px;
+			}
+
+			&:hover::after {
+				animation: borderBottom 0.5s ease-out forwards alternate;
+			}
+		}
+	}
+	@keyframes borderBottom {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 100%;
+		}
 	}
 
 	&__logo {

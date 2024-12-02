@@ -14,28 +14,40 @@ export default function Header({ count, content }) {
 	return (
 		<header className={headerClassName}>
 			<nav className="nav">
-				<img src={menuIcon} alt="A menu icon" className="header__icon" />
+				<img
+					src={menuIcon}
+					alt="A menu icon"
+					className="header__icon header__icon--menu"
+				/>
 			</nav>
 			<Link to="/" className="header__link header__link--logo">
 				<span className="header__logo">Beauty Bin</span>
 			</Link>
 
 			<div className="header__icon-container">
-				<Link to="/wishlist" className="header__link">
-					<img src={heartIcon} alt="A heart icon" className="header__icon" />
+				<Link to="/wishlist" className="header__link header__link--heart">
+					<img
+						src={heartIcon}
+						alt="A heart icon"
+						className="header__icon header__icon--heart"
+					/>
 				</Link>
 
 				<div className="header__notification">
 					<img
 						src={bellIcon}
 						alt="An icon for a notification bell"
-						className="header__icon"
+						className="header__icon header__icon--bell"
 					/>{" "}
 					{count}
 				</div>
 
 				<div className="header__avatar-wrapper">
-					<img src={avatar} alt="An avatar icon" className="header__icon" />
+					<img
+						src={avatar}
+						alt="An avatar icon"
+						className="header__icon header__icon--avatar"
+					/>
 				</div>
 			</div>
 		</header>

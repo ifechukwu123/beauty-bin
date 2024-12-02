@@ -1,9 +1,13 @@
-import { useState } from "react";
 import FilterItems from "../FilterItems/FilterItems";
 import "./Filter.scss";
 
-export default function Filter({ categories }) {
-	const [selected, setSelected] = useState([]);
+export default function Filter({
+	categories,
+	statusFilter,
+	setStatusFilter,
+	categoryFilter,
+	setCategoryFilter,
+}) {
 	const status = [
 		{ id: 1, name: "expired" },
 		{ id: 2, name: "expiring" },
@@ -11,24 +15,25 @@ export default function Filter({ categories }) {
 	];
 
 	function handleOnClick() {
-		setSelected([]);
+		setStatusFilter([]);
+		setCategoryFilter([]);
 	}
 	return (
 		<div className="filter">
 			<FilterItems
 				name="category"
 				content={categories}
-				selected={selected}
-				setSelected={setSelected}
+				selected={categoryFilter}
+				setSelected={setCategoryFilter}
 			/>
 			<FilterItems
 				name="status"
 				content={status}
-				selected={selected}
-				setSelected={setSelected}
+				selected={statusFilter}
+				setSelected={setStatusFilter}
 			/>
 
-			{selected.length > 0 && (
+			{statusFilter.length + categoryFilter.length > 0 && (
 				<div className="filter__reset" onClick={handleOnClick}>
 					{" "}
 					X Reset filters
