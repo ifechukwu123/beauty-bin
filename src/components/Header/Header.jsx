@@ -8,7 +8,7 @@ import avatar from "../../assets/icons/user-female.svg";
 import "./Header.scss";
 import { useState } from "react";
 
-export default function Header({ count, content, token }) {
+export default function Header({ count, content, jwtToken }) {
 	const [isLightMode, setIsLightMode] = useState(true);
 	const [profileOpen, setProfileOpen] = useState(false);
 
@@ -87,7 +87,7 @@ export default function Header({ count, content, token }) {
 							alt="An avatar icon"
 							className="header__icon header__icon--avatar"
 						/>
-						{profileOpen && <ProfileOptions token={token} />}
+						{profileOpen && <ProfileOptions jwtToken={jwtToken} />}
 					</div>
 				</div>
 			</div>
@@ -95,11 +95,11 @@ export default function Header({ count, content, token }) {
 	);
 }
 
-function ProfileOptions({ token }) {
+function ProfileOptions({ jwtToken }) {
 	return (
 		<div className="profile">
 			<ul className="profile__list">
-				{token ? (
+				{jwtToken ? (
 					<li className="profile__item">Log Out</li>
 				) : (
 					<>

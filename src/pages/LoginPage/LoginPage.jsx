@@ -1,13 +1,43 @@
+import axios from "axios";
 import "./LoginPage.scss";
 import { Formik } from "formik";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-export default function LoginPage() {
+const url = import.meta.env.VITE_API_URL;
+
+export default function LoginPage({ setJwtToken }) {
+	const [success, setSuccess] = useState(false);
+	const [error, setError] = useState(null);
 	let navigate = useNavigate();
 
-	function handleOnSubmit(values) {
-		console.log(values);
+	async function handleOnSubmit(values) {
+		setError(null);
+		const email = values.email.trim();
+		const password = values.password.trim();
+
+		try {
+			const response = await axios.post(`${url}/users/login`, {
+				email,
+				password,
+			});
+			setSuccess(true);
+			setJwtToken(response.data.jwtToken);
+			localStorage.setItem("jwtToken", response.data.jwtToken);
+
+			setTimeout(() => {
+				navigate("/");
+			}, 1500);
+		} catch (error) {
+			if (error.status === 404) {
+				setError(error.response.data.message);
+			}
+			if (error.status === 401) {
+				setError(error.response.data.message);
+			}
+			console.error(`Unable to log in user: ${error}`);
+		}
 	}
 
 	function handleOnClick() {
@@ -23,7 +53,13 @@ export default function LoginPage() {
 					email: Yup.string()
 						.email("Invalid email address")
 						.required("Required"),
-					password: Yup.string().trim().required("Required"),
+					password: Yup.string()
+						.test(
+							"no-empty-password",
+							"Password can not be just spaces",
+							(value) => value && value.trim().length > 0
+						)
+						.required("Required"),
 				})}
 				onSubmit={(values) => handleOnSubmit(values)}
 			>
@@ -80,6 +116,8 @@ export default function LoginPage() {
 					</form>
 				)}
 			</Formik>
+			{success && <p>Log in is successful!</p>}
+			{error && <p>{error}</p>}
 		</main>
 	);
 }

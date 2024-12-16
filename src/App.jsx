@@ -20,7 +20,7 @@ const socket = io(url);
 function App() {
 	const [counter, setCounter] = useState(""); //make this value persist with localStorage
 	const [notifObject, setNotifObject] = useState({}); //make this value persist with localStorage
-	const [token, setToken] = useState(localStorage.getItem("jwtToken"));
+	const [jwtToken, setJwtToken] = useState(localStorage.getItem("jwtToken"));
 
 	useEffect(() => {
 		socket.on("connect", () => {
@@ -35,12 +35,12 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Header count={counter} content={notifObject} token={token} />
+			<Header count={counter} content={notifObject} jwtToken={jwtToken} />
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="home" element={<Navigate to="/" />} />
-				<Route path="login" element={<LoginPage />} />
+				<Route path="login" element={<LoginPage setJwtToken={setJwtToken} />} />
 				<Route path="signUp" element={<SignUpPage />} />
 				<Route path="products" element={<InventoryPage />} />
 				<Route path="products/add" element={<AddProductPage />} />
