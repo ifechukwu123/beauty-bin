@@ -4,7 +4,7 @@
 .header {
 	background-color: $primary-pink;
 	border-bottom: $separator-border;
-	padding: 1rem $desktop-padding;
+	padding: 0.7rem $desktop-padding;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -19,6 +19,7 @@
 
 		&--logo {
 			margin-right: -5rem;
+			align-self: flex-end;
 		}
 	}
 
@@ -38,5 +39,63 @@
 	&__icon-container {
 		display: flex;
 		gap: 2.5rem;
+	}
+
+	&__notification-status {
+		width: 0.7rem;
+		height: 0.7rem;
+		border-radius: 50%;
+		background-color: $status-green;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		border: 1px solid black;
+	}
+
+	&__icon-wrapper {
+		border-radius: 50%;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		justify-content: center;
+		position: relative;
+
+		&:hover {
+			background-color: $secondary-pink;
+		}
+	}
+}
+
+.profile {
+	position: absolute;
+	background-color: $primary-white;
+	z-index: 1;
+	border: 1.5px solid $primary-black;
+	border-radius: 7px;
+	top: 48px;
+	width: max-content;
+
+	&__link {
+		text-decoration: none;
+	}
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__item {
+		padding: 8px;
+		border-bottom: 1.5px solid $primary-black;
+		text-align: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	li:last-child {
+		border-bottom: none;
 	}
 }

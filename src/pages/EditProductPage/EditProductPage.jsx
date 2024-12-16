@@ -59,7 +59,7 @@ export default function EditProductPage() {
 	};
 
 	return (
-		<div className="editProduct">
+		<main className="editProduct">
 			<PageHeader title="edit product" />
 			<div className="editProduct__form-container">
 				<ProductForm
@@ -68,6 +68,6 @@ export default function EditProductPage() {
 					page="edit"
 				/>
 			</div>
-		</div>
+		</main>
 	);
 }

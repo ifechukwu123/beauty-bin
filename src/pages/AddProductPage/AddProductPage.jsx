@@ -28,7 +28,7 @@ export default function AddProductPage() {
 	};
 
 	return (
-		<div className="addProduct">
+		<main className="addProduct">
 			<PageHeader title="add a new product" />
 			<div className="addProduct__form-container">
 				<ProductForm
@@ -37,6 +37,6 @@ export default function AddProductPage() {
 					page="add"
 				/>
 			</div>
-		</div>
+		</main>
 	);
 }

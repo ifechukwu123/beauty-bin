@@ -103,7 +103,7 @@
 		}
 
 		&__button-content {
-			background-color: pink;
+			background-color: $primary-pink;
 			width: 2.5rem;
 			height: 2.5rem;
 			display: flex;
@@ -112,7 +112,7 @@
 
 			&--active {
 				padding: 0.5rem 1rem;
-				gap: 5px;
+				gap: 9.5px;
 				border-radius: 1.875rem;
 				width: unset;
 				height: unset;
@@ -120,6 +120,7 @@
 
 			&:hover {
 				background-color: $secondary-pink;
+				cursor: pointer;
 			}
 		}
 

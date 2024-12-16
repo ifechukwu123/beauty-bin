@@ -7,7 +7,7 @@ import "./HomePage.scss";
 
 export default function HomePage() {
 	return (
-		<div className="homepage">
+		<main className="homepage">
 			<div className="homepage__sticker-container homepage__sticker-container--one">
 				<Link to="products" className="homepage__link">
 					<div className="homepage__sticker-wrapper homepage__sticker-wrapper--inventory">
@@ -66,6 +66,6 @@ export default function HomePage() {
 					</div>
 				</Link>
 			</div>
-		</div>
+		</main>
 	);
 }

@@ -58,7 +58,7 @@ export default function InventoryPage() {
 	}
 
 	return (
-		<div className="products">
+		<main className="products">
 			<PageHeader title="inventory" />
 			<div className="products-wrapper">
 				<Filter
@@ -70,7 +70,7 @@ export default function InventoryPage() {
 				/>
 				<ProductList productList={filteredProductList} />
 			</div>
-		</div>
+		</main>
 	);
 }
 

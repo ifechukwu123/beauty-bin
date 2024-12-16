@@ -10,13 +10,17 @@ import WishlistPage from "./pages/WishlistPage/WishlistPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import EditProductPage from "./pages/EditProductPage/EditProductPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import { io } from "socket.io-client";
 
 const url = import.meta.env.VITE_API_URL;
 const socket = io(url);
+
 function App() {
 	const [counter, setCounter] = useState(""); //make this value persist with localStorage
 	const [notifObject, setNotifObject] = useState({}); //make this value persist with localStorage
+	const [token, setToken] = useState(localStorage.getItem("jwtToken"));
 
 	useEffect(() => {
 		socket.on("connect", () => {
@@ -31,11 +35,13 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Header count={counter} content={notifObject} />
+			<Header count={counter} content={notifObject} token={token} />
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="home" element={<Navigate to="/" />} />
+				<Route path="login" element={<LoginPage />} />
+				<Route path="signUp" element={<SignUpPage />} />
 				<Route path="products" element={<InventoryPage />} />
 				<Route path="products/add" element={<AddProductPage />} />
 				<Route path="products/:id" element={<ProductDetailsPage />} />

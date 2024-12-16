@@ -29,7 +29,7 @@ export default function WishlistPage() {
 	}
 
 	return (
-		<div className="wishlist">
+		<main className="wishlist">
 			<PageHeader title="wishlist" />
 			<ul className="wishlist__list">
 				{wishlist.map((wish) => (
@@ -38,6 +38,6 @@ export default function WishlistPage() {
 					</li>
 				))}
 			</ul>
-		</div>
+		</main>
 	);
 }

@@ -37,11 +37,11 @@ export default function ProductDetailsPage() {
 	}
 
 	return (
-		<div className="product-details">
+		<main className="product-details">
 			<PageHeader title="Product Details" />
 			<div className="product-details__container">
 				<ProductDetails product={product} />
 			</div>
-		</div>
+		</main>
 	);
 }

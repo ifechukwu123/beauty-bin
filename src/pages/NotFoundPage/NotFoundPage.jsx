@@ -10,7 +10,7 @@ export default function NotFoundPage() {
 	}
 
 	return (
-		<div className="notFound">
+		<main className="notFound">
 			<div className="notFound__status">
 				<span className="notFound__status-text">4</span>
 				<img
@@ -26,6 +26,6 @@ export default function NotFoundPage() {
 			<button onClick={handleOnClick} className="notFound__button">
 				take me home
 			</button>
-		</div>
+		</main>
 	);
 }
