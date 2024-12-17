@@ -6,13 +6,15 @@ import deleteIcon from "../../assets/icons/delete.svg";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function WishItem({ wishlistItem, getWishList }) {
+export default function WishItem({ wishlistItem, getWishList, jwtToken }) {
 	const [show, setShow] = useState(false);
 	const { name, brand, image, id } = wishlistItem;
 
 	async function handleDelete() {
 		try {
-			const response = await axios.delete(`${url}/wishlist/${id}`);
+			const response = await axios.delete(`${url}/wishlist/${id}`, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 
 			if (response.status === 204) {
 				getWishList();

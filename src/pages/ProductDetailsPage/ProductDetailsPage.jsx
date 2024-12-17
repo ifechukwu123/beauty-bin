@@ -6,7 +6,7 @@ import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
-export default function ProductDetailsPage() {
+export default function ProductDetailsPage({ jwtToken }) {
 	const { id } = useParams();
 	const [product, setProduct] = useState([]);
 	const [fetched, setFetched] = useState(false);
@@ -15,12 +15,17 @@ export default function ProductDetailsPage() {
 
 	const getProductDetails = async () => {
 		try {
-			const response = await axios.get(`${url}/products/${id}`);
+			const response = await axios.get(`${url}/products/${id}`, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 			setProduct(response.data);
 			setFetched(true);
 		} catch (error) {
 			if (error.status === 404) {
 				navigate("/notFound");
+			}
+			if (error.status === 400 || error.status === 401) {
+				navigate("/login");
 			}
 			console.error(
 				`Unable to retrieve details for product with id ${id}: ${error}`
@@ -40,7 +45,7 @@ export default function ProductDetailsPage() {
 		<main className="product-details">
 			<PageHeader title="Product Details" />
 			<div className="product-details__container">
-				<ProductDetails product={product} />
+				<ProductDetails product={product} jwtToken={jwtToken} />
 			</div>
 		</main>
 	);

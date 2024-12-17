@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./InventoryPage.scss";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
@@ -7,25 +8,29 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function InventoryPage() {
+export default function InventoryPage({ jwtToken }) {
 	const [productList, setProductList] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [fetched, setFetched] = useState(false);
 	const [statusFilter, setStatusFilter] = useState([]);
 	const [categoryFilter, setCategoryFilter] = useState([]);
-
-	//make state to hide the filter
-	//make everything stick except the products
+	const [error, setError] = useState(null);
 
 	const getProductsCategories = async () => {
 		try {
-			const products = await axios.get(`${url}/products`);
-			setProductList(products.data);
+			const response = await axios.get(`${url}/categories`);
+			setCategories(response.data);
 
-			const categories = await axios.get(`${url}/categories`);
-			setCategories(categories.data);
+			const products = await axios.get(`${url}/products`, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
+			setProductList(products.data);
 			setFetched(true);
 		} catch (error) {
+			if (error.status === 400 || error.status === 401) {
+				setError(true);
+				setFetched(true);
+			}
 			console.error(`Unable to retrieve products & categories: ${error}`);
 		}
 	};
@@ -68,7 +73,15 @@ export default function InventoryPage() {
 					categoryFilter={categoryFilter}
 					setCategoryFilter={setCategoryFilter}
 				/>
-				<ProductList productList={filteredProductList} />
+				{error ? (
+					<div>
+						<Link to="/login">Log in</Link> or{" "}
+						<Link to="/signUp">Sign up </Link>
+						to see products
+					</div>
+				) : (
+					<ProductList productList={filteredProductList} />
+				)}
 			</div>
 		</main>
 	);

@@ -42,11 +42,23 @@ function App() {
 				<Route path="home" element={<Navigate to="/" />} />
 				<Route path="login" element={<LoginPage setJwtToken={setJwtToken} />} />
 				<Route path="signUp" element={<SignUpPage />} />
-				<Route path="products" element={<InventoryPage />} />
-				<Route path="products/add" element={<AddProductPage />} />
-				<Route path="products/:id" element={<ProductDetailsPage />} />
-				<Route path="products/:id/edit" element={<EditProductPage />} />
-				<Route path="wishlist" element={<WishlistPage />} />
+				<Route
+					path="products"
+					element={<InventoryPage jwtToken={jwtToken} />}
+				/>
+				<Route
+					path="products/add"
+					element={<AddProductPage jwtToken={jwtToken} />}
+				/>
+				<Route
+					path="products/:id"
+					element={<ProductDetailsPage jwtToken={jwtToken} />}
+				/>
+				<Route
+					path="products/:id/edit"
+					element={<EditProductPage jwtToken={jwtToken} />}
+				/>
+				<Route path="wishlist" element={<WishlistPage jwtToken={jwtToken} />} />
 				<Route path="about" element={<AboutPage />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>

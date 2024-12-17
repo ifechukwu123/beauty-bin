@@ -6,14 +6,19 @@ import ProductForm from "../../components/ProductForm/ProductForm";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function AddProductPage() {
+export default function AddProductPage({ jwtToken }) {
 	let navigate = useNavigate();
 
 	async function handleOnSubmit(values) {
 		try {
-			const response = await axios.post(`${url}/products`, values);
+			const response = await axios.post(`${url}/products`, values, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 			navigate(`/products/${response.data.id}`);
 		} catch (error) {
+			if (error.status === 400 || error.status === 401) {
+				navigate("/login");
+			}
 			console.error(`Unable to add new product: ${error}`);
 		}
 	}

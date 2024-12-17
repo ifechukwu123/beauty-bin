@@ -7,7 +7,7 @@ import backArrow from "../../assets/icons/arrow-left.svg";
 import editIcon from "../../assets/icons/pencil.svg";
 
 const url = import.meta.env.VITE_API_URL;
-export default function ProductDetails({ product }) {
+export default function ProductDetails({ product, jwtToken }) {
 	let navigate = useNavigate();
 	const [show, setShow] = useState(false);
 	const [inWishlist, setInWishlist] = useState(false);
@@ -49,12 +49,18 @@ export default function ProductDetails({ product }) {
 		}
 
 		try {
-			await axios.post(`${url}/wishlist`, {
-				name,
-				brand,
-				image,
-				id,
-			});
+			await axios.post(
+				`${url}/wishlist`,
+				{
+					name,
+					brand,
+					image,
+					id,
+				},
+				{
+					headers: { Authorization: `Bearer ${jwtToken}` },
+				}
+			);
 
 			setInWishlist(true);
 		} catch (error) {
@@ -68,7 +74,9 @@ export default function ProductDetails({ product }) {
 
 	async function handleDelete() {
 		try {
-			await axios.delete(`${url}/products/${id}`);
+			await axios.delete(`${url}/products/${id}`, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 			handleShow();
 			navigate("/products");
 		} catch (error) {

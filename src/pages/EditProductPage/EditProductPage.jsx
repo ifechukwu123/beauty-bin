@@ -6,7 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const url = import.meta.env.VITE_API_URL;
-export default function EditProductPage() {
+export default function EditProductPage({ jwtToken }) {
 	const { id } = useParams();
 	let navigate = useNavigate();
 
@@ -15,7 +15,9 @@ export default function EditProductPage() {
 
 	async function handleOnSubmit(values) {
 		try {
-			const response = await axios.put(`${url}/products/${id}`, values);
+			const response = await axios.put(`${url}/products/${id}`, values, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 			navigate(`/products/${response.data.id}`);
 		} catch (error) {
 			console.error(`Unable to add edit product: ${error}`);
@@ -24,12 +26,17 @@ export default function EditProductPage() {
 
 	const getProductDetails = async () => {
 		try {
-			const response = await axios.get(`${url}/products/${id}`);
+			const response = await axios.get(`${url}/products/${id}`, {
+				headers: { Authorization: `Bearer ${jwtToken}` },
+			});
 			setProduct(response.data);
 			setFetched(true);
 		} catch (error) {
 			if (error.status === 404) {
 				navigate("/notFound");
+			}
+			if (error.status === 400 || error.status === 401) {
+				navigate("/login");
 			}
 			console.error(
 				`Unable to retrieve details for product with id ${id}: ${error}`
