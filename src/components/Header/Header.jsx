@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import starIcon from "../../assets/icons/star.svg";
 import bellIcon from "../../assets/icons/bell.svg";
@@ -6,11 +6,17 @@ import sunIcon from "../../assets/icons/sun.svg";
 import moonIcon from "../../assets/icons/night.svg";
 import avatar from "../../assets/icons/user-female.svg";
 import "./Header.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export default function Header({ count, content, jwtToken }) {
+const url = import.meta.env.VITE_API_URL;
+
+export default function Header({ count, content, jwtToken, setJwtToken }) {
+	let navigate = useNavigate();
+
 	const [isLightMode, setIsLightMode] = useState(true);
 	const [profileOpen, setProfileOpen] = useState(false);
+	const [user, setUser] = useState(null);
 
 	console.log(content);
 	const location = useLocation();
@@ -24,6 +30,24 @@ export default function Header({ count, content, jwtToken }) {
 	function handleProfileOpen() {
 		setProfileOpen(!profileOpen);
 	}
+
+	useEffect(() => {
+		async function getUserProfile() {
+			if (jwtToken) {
+				try {
+					const response = await axios.get(`${url}/users/profile`, {
+						headers: { Authorization: `Bearer ${jwtToken}` },
+					});
+					setUser(response.data);
+				} catch (error) {
+					console.error(`Unable to retrieve user profile: ${error}`);
+				}
+			} else {
+				setUser(null);
+			}
+		}
+		getUserProfile();
+	}, [jwtToken]);
 
 	return (
 		<header className={headerClassName}>
@@ -87,7 +111,13 @@ export default function Header({ count, content, jwtToken }) {
 							alt="An avatar icon"
 							className="header__icon header__icon--avatar"
 						/>
-						{profileOpen && <ProfileOptions jwtToken={jwtToken} />}
+						{profileOpen && (
+							<ProfileOptions
+								user={user}
+								setJwtToken={setJwtToken}
+								navigate={navigate}
+							/>
+						)}
 					</div>
 				</div>
 			</div>
@@ -95,12 +125,20 @@ export default function Header({ count, content, jwtToken }) {
 	);
 }
 
-function ProfileOptions({ jwtToken }) {
+function ProfileOptions({ user, setJwtToken, navigate }) {
+	function handleLogout() {
+		setJwtToken(null);
+		localStorage.removeItem("jwtToken");
+		navigate("/");
+	}
+
 	return (
 		<div className="profile">
 			<ul className="profile__list">
-				{jwtToken ? (
-					<li className="profile__item">Log Out</li>
+				{user ? (
+					<li className="profile__item" onClick={handleLogout}>
+						Log Out
+					</li>
 				) : (
 					<>
 						<li className="profile__item">

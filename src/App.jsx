@@ -35,7 +35,12 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Header count={counter} content={notifObject} jwtToken={jwtToken} />
+			<Header
+				count={counter}
+				content={notifObject}
+				jwtToken={jwtToken}
+				setJwtToken={setJwtToken}
+			/>
 
 			<Routes>
 				<Route path="/" element={<HomePage />} />
