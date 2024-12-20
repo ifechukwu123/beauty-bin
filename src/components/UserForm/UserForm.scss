@@ -1,0 +1,98 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography";
+
+.userForm-container {
+	border: $separator-border;
+	width: 100%;
+	display: flex;
+
+	.userForm__image-wrapper {
+		background-color: $primary-pink;
+		width: 3.875rem;
+		border-right: $separator-border;
+	}
+
+	.userForm__form-container {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		padding: 30px;
+		gap: 1.5rem;
+	}
+
+	.userForm {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		&__field {
+			border: 1.5px solid $primary-black;
+			border-radius: 1.875rem;
+			padding: 0.3rem 1rem;
+			width: 300px;
+
+			&:active,
+			&:focus {
+				border-color: $primary-black;
+				outline: none;
+			}
+
+			&--error {
+				border-color: $secondary-pink;
+			}
+		}
+
+		&__button-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__link {
+			display: flex;
+			text-decoration: none;
+			color: $secondary-ash;
+			text-transform: uppercase;
+			align-items: center;
+			gap: 10px;
+
+			&-name {
+				color: $secondary-ash;
+				font-family: "TBJMaltaMiniEdition";
+			}
+		}
+
+		&__icon-wrapper {
+			display: flex;
+			justify-content: center;
+			width: 2.1875rem;
+			height: 2.1875rem;
+			border-radius: 50%;
+			background-color: $primary-pink;
+			border: $component-border;
+
+			&:hover {
+				background-color: $secondary-pink;
+			}
+		}
+
+		&__icon {
+			width: 1rem;
+		}
+
+		&__button {
+			border: none;
+			background-color: $primary-white;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		&--error {
+			color: $secondary-pink;
+			font-size: 0.8125rem;
+		}
+	}
+}

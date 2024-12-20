@@ -21,7 +21,11 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 	console.log(content);
 	const location = useLocation();
 	const headerClassName =
-		location.pathname === "/" ? "header" : "header header--white";
+		location.pathname === "/" ||
+		location.pathname === "/login" ||
+		location.pathname === "/signUp"
+			? "header"
+			: "header header--white";
 
 	function handleSetMood() {
 		setIsLightMode(!isLightMode);
@@ -55,72 +59,71 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 				<img
 					src={menuIcon}
 					alt="A menu icon"
-					className="header__icon header__icon--menu"
+					className="nav__icon nav__icon--menu"
 				/>
-			</nav>
-			<Link to="/" className="header__link header__link--logo">
-				<span className="header__logo">Beauty Bin</span>
-			</Link>
-
-			<div className="header__icon-container">
-				<Link to="/wishlist" className="header__link header__link--star">
-					<div className="header__icon-wrapper">
-						<img
-							src={starIcon}
-							alt="A star icon"
-							className="header__icon header__icon--star"
-						/>
-					</div>
+				<Link to="/" className="nav__link nav__link--logo">
+					<span className="nav__logo">Beauty Bin</span>
 				</Link>
-
-				<div className="header__notification">
-					<div className="header__icon-wrapper">
-						<img
-							src={bellIcon}
-							alt="An icon for a notification bell"
-							className="header__icon header__icon--bell"
-						/>
-						<div className="header__notification-status"></div>
-					</div>
-					{count}
-				</div>
-
-				<div className="header__mode" onClick={handleSetMood}>
-					<div className="header__icon-wrapper">
-						{isLightMode && (
+				<div className="nav__icon-container">
+					<Link to="/wishlist" className="nav__link nav__link--star">
+						<div className="nav__icon-wrapper">
 							<img
-								src={sunIcon}
-								alt="An icon of a sun"
-								className="header__icon header__icon--sun"
+								src={starIcon}
+								alt="A star icon"
+								className="nav__icon nav__icon--star"
 							/>
-						)}
-						{isLightMode || (
-							<img
-								src={moonIcon}
-								alt="An icon of a moon"
-								className="header__icon header__icon--moon"
-							/>
-						)}
-					</div>
-				</div>
+						</div>
+					</Link>
 
-				<div className="header__avatar-wrapper">
-					<div className="header__icon-wrapper" onClick={handleProfileOpen}>
-						<img
-							src={avatar}
-							alt="An avatar icon"
-							className="header__icon header__icon--avatar"
-						/>
-						{profileOpen && (
-							<ProfileOptions
-								user={user}
-								setJwtToken={setJwtToken}
-								navigate={navigate}
+					<div className="nav__notification">
+						<div className="nav__icon-wrapper">
+							<img
+								src={bellIcon}
+								alt="An icon for a notification bell"
+								className="nav__icon nav__icon--bell"
 							/>
-						)}
+							<div className="nav__notification-status"></div>
+						</div>
+						{count}
+					</div>
+
+					<div className="nav__mode" onClick={handleSetMood}>
+						<div className="nav__icon-wrapper">
+							{isLightMode && (
+								<img
+									src={sunIcon}
+									alt="An icon of a sun"
+									className="nav__icon nav__icon--sun"
+								/>
+							)}
+							{isLightMode || (
+								<img
+									src={moonIcon}
+									alt="An icon of a moon"
+									className="nav__icon nav__icon--moon"
+								/>
+							)}
+						</div>
+					</div>
+
+					<div className="nav__avatar-wrapper">
+						<div className="nav__icon-wrapper" onClick={handleProfileOpen}>
+							<img
+								src={avatar}
+								alt="An avatar icon"
+								className="nav__icon nav__icon--avatar"
+							/>
+							{profileOpen && (
+								<ProfileOptions
+									user={user}
+									setJwtToken={setJwtToken}
+									navigate={navigate}
+								/>
+							)}
+						</div>
 					</div>
 				</div>
-			</div>
+			</nav>
 		</header>
 	);
 }

@@ -5,63 +5,68 @@
 	background-color: $primary-pink;
 	border-bottom: $separator-border;
 	padding: 0.7rem $desktop-padding;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 
 	&--white {
 		background-color: $primary-white;
 	}
 
-	&__link {
-		text-decoration: none;
-		color: $primary-black;
-
-		&--logo {
-			margin-right: -5rem;
-			align-self: flex-end;
-		}
-	}
-
-	&__icon {
-		width: 1.5625rem;
-
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
-	&__logo {
-		font-family: "Halimun";
-		font-size: 1.5625rem;
-	}
-
-	&__icon-container {
+	.nav {
 		display: flex;
-		gap: 2.5rem;
-	}
-
-	&__notification-status {
-		width: 0.7rem;
-		height: 0.7rem;
-		border-radius: 50%;
-		background-color: $status-green;
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		border: 1px solid black;
-	}
-
-	&__icon-wrapper {
-		border-radius: 50%;
-		width: 45px;
-		height: 45px;
-		display: flex;
-		justify-content: center;
+		justify-content: space-between;
+		align-items: center;
 		position: relative;
 
-		&:hover {
-			background-color: $secondary-pink;
+		&__link {
+			text-decoration: none;
+			color: $primary-black;
+
+			&--logo {
+				position: absolute;
+				left: 0;
+				right: 0;
+				text-align: center;
+			}
+		}
+
+		&__icon {
+			width: 1.5625rem;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		&__icon-container {
+			display: flex;
+			gap: 2.5rem;
+		}
+
+		&__icon-wrapper {
+			border-radius: 50%;
+			width: 45px;
+			height: 45px;
+			display: flex;
+			justify-content: center;
+			position: relative;
+
+			&:hover {
+				background-color: $secondary-pink;
+			}
+		}
+		&__logo {
+			font-family: "Halimun";
+			font-size: 1.5625rem;
+		}
+
+		&__notification-status {
+			width: 0.7rem;
+			height: 0.7rem;
+			border-radius: 50%;
+			background-color: $status-green;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			border: 1px solid black;
 		}
 	}
 }
