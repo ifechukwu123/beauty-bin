@@ -14,7 +14,7 @@ const url = import.meta.env.VITE_API_URL;
 export default function Header({ count, content, jwtToken, setJwtToken }) {
 	let navigate = useNavigate();
 
-	const [isLightMode, setIsLightMode] = useState(true);
+	const [mode, setMode] = useState(localStorage.getItem("mode") || "light");
 	const [profileOpen, setProfileOpen] = useState(false);
 	const [user, setUser] = useState(null);
 
@@ -28,7 +28,9 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 			: "header header--white";
 
 	function handleSetMood() {
-		setIsLightMode(!isLightMode);
+		const selectedMode = mode === "light" ? "dark" : "light";
+		setMode(selectedMode);
+		localStorage.setItem("mode", selectedMode);
 	}
 
 	function handleProfileOpen() {
@@ -89,14 +91,13 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 
 					<div className="nav__mode" onClick={handleSetMood}>
 						<div className="nav__icon-wrapper">
-							{isLightMode && (
+							{mode === "light" ? (
 								<img
 									src={sunIcon}
 									alt="An icon of a sun"
 									className="nav__icon nav__icon--sun"
 								/>
-							)}
-							{isLightMode || (
+							) : (
 								<img
 									src={moonIcon}
 									alt="An icon of a moon"

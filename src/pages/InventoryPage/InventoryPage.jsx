@@ -75,6 +75,12 @@ export default function InventoryPage({ jwtToken }) {
 				/>
 				{error ? (
 					<div>
+						<h2>You have to sign in to see this page.</h2>
+						<p>
+							Sign in and discover a new way to organize all your online and
+							in-store purchases.
+						</p>
+						<button>Login</button>
 						<Link to="/login">Log in</Link> or{" "}
 						<Link to="/signUp">Sign up </Link>
 						to see products

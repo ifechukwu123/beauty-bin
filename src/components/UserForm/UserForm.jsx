@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import arrowRight from "../../assets/icons/arrow-right.svg";
-import arrowLeft from "../../assets/icons/arrow-left.svg";
+import arrowLeft from "../../assets/icons/arrow-left-ash.svg";
 
 export default function UserForm({ handleOnSubmit, success, error, page }) {
 	return (
@@ -76,7 +76,7 @@ export default function UserForm({ handleOnSubmit, success, error, page }) {
 									<img
 										src={arrowLeft}
 										alt="An icon of a left arrow"
-										className="userForm__icon"
+										className="userForm__icon userForm__icon--left"
 									/>
 									<span className="userForm__link-name">
 										{" "}
@@ -98,11 +98,15 @@ export default function UserForm({ handleOnSubmit, success, error, page }) {
 				</Formik>
 				{success &&
 					(page === "login" ? (
-						<p>Login is successful!</p>
+						<p className="userForm__message userForm__message--success">
+							Login is successful!
+						</p>
 					) : (
-						<p>Sign up is successful!</p>
+						<p className="userForm__message">Sign up is successful!</p>
 					))}
-				{error && <p>{error}</p>}
+				{error && (
+					<p className="userForm__message userForm__message--error">{error}</p>
+				)}
 			</div>
 		</div>
 	);
