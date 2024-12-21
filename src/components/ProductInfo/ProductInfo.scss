@@ -15,7 +15,7 @@
 		padding: 2.5rem 2.5rem 1.5rem;
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 
 	&-container {
@@ -98,8 +98,6 @@
 	}
 
 	&__wishlist {
-		font-size: 0.875rem;
-
 		&:hover {
 			cursor: pointer;
 		}
@@ -113,7 +111,7 @@
 		background-color: $primary-pink;
 		padding: 0.25rem 1rem;
 		border-radius: 1.125rem;
-		font-size: 0.875rem;
+		font-size: 1rem;
 
 		&:hover {
 			cursor: pointer;

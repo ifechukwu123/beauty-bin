@@ -20,7 +20,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		padding: 50px;
+		padding: 3.125rem;
 		gap: 1.5rem;
 	}
 
@@ -33,7 +33,7 @@
 			border: 1.5px solid $primary-black;
 			border-radius: 1.875rem;
 			padding: 0.5rem 1rem;
-			width: 350px;
+			width: 21.875rem;
 			font-size: 1rem;
 
 			&:active,
@@ -63,7 +63,7 @@
 			color: $secondary-ash;
 			text-transform: uppercase;
 			align-items: center;
-			gap: 10px;
+			gap: 0.625rem;
 			padding: 0.5rem;
 
 			&:hover {
@@ -74,7 +74,7 @@
 			&-name {
 				color: $secondary-ash;
 				font-family: "TBJMaltaMiniEdition";
-				font-size: 1.375rem;
+				font-size: 1.5rem;
 				margin-top: 4px;
 			}
 		}

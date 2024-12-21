@@ -96,8 +96,9 @@
 		}
 
 		&--wishlist {
-			transform: rotate(9deg);
+			transform: rotate(13deg);
 			left: 28%;
+			top: 44%;
 		}
 
 		&--add {
@@ -120,6 +121,7 @@
 
 		&--wishlist {
 			transform: rotate(5deg);
+			width: 17.5rem;
 		}
 	}
 }

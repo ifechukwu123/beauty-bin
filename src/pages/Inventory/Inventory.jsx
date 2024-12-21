@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./InventoryPage.scss";
+import "./Inventory.scss";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
 import Filter from "../../components/Filter/Filter";
@@ -8,7 +8,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function InventoryPage({ jwtToken }) {
+export default function Inventory({ jwtToken }) {
 	const [productList, setProductList] = useState([]);
 	const [categories, setCategories] = useState([]);
 	const [fetched, setFetched] = useState(false);

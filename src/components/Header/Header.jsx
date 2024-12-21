@@ -14,7 +14,7 @@ const url = import.meta.env.VITE_API_URL;
 export default function Header({ count, content, jwtToken, setJwtToken }) {
 	let navigate = useNavigate();
 
-	const [mode, setMode] = useState(localStorage.getItem("mode") || "light");
+	const [theme, setTheme] = useState("light");
 	const [profileOpen, setProfileOpen] = useState(false);
 	const [user, setUser] = useState(null);
 
@@ -28,14 +28,21 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 			: "header header--white";
 
 	function handleSetMood() {
-		const selectedMode = mode === "light" ? "dark" : "light";
-		setMode(selectedMode);
-		localStorage.setItem("mode", selectedMode);
+		const selectedTheme = theme === "light" ? "dark" : "light";
+		setTheme(selectedTheme);
+		localStorage.setItem("theme", selectedTheme);
 	}
 
 	function handleProfileOpen() {
 		setProfileOpen(!profileOpen);
 	}
+
+	useEffect(() => {
+		let themeLocal = localStorage.getItem("theme");
+		if (themeLocal) {
+			setTheme(themeLocal);
+		}
+	}, []);
 
 	useEffect(() => {
 		async function getUserProfile() {
@@ -66,18 +73,20 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 				<Link to="/" className="nav__link nav__link--logo">
 					<span className="nav__logo">Beauty Bin</span>
 				</Link>
-				<div className="nav__icon-container">
-					<Link to="/wishlist" className="nav__link nav__link--star">
-						<div className="nav__icon-wrapper">
-							<img
-								src={starIcon}
-								alt="A star icon"
-								className="nav__icon nav__icon--star"
-							/>
-						</div>
-					</Link>
+				<ul className="nav__list">
+					<li className="nav__item">
+						<Link to="/wishlist" className="nav__link nav__link--star">
+							<div className="nav__icon-wrapper">
+								<img
+									src={starIcon}
+									alt="A star icon"
+									className="nav__icon nav__icon--star"
+								/>
+							</div>
+						</Link>
+					</li>
 
-					<div className="nav__notification">
+					<li className="nav__item">
 						<div className="nav__icon-wrapper">
 							<img
 								src={bellIcon}
@@ -87,11 +96,11 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 							<div className="nav__notification-status"></div>
 						</div>
 						{count}
-					</div>
+					</li>
 
-					<div className="nav__mode" onClick={handleSetMood}>
+					<li className="nav__item" onClick={handleSetMood}>
 						<div className="nav__icon-wrapper">
-							{mode === "light" ? (
+							{theme === "light" ? (
 								<img
 									src={sunIcon}
 									alt="An icon of a sun"
@@ -105,9 +114,9 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 								/>
 							)}
 						</div>
-					</div>
+					</li>
 
-					<div className="nav__avatar-wrapper">
+					<li className="nav__item">
 						<div className="nav__icon-wrapper" onClick={handleProfileOpen}>
 							<img
 								src={avatar}
@@ -122,8 +131,8 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 								/>
 							)}
 						</div>
-					</div>
-				</div>
+					</li>
+				</ul>
 			</nav>
 		</header>
 	);

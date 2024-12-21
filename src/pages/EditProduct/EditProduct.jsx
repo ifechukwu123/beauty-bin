@@ -1,12 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
-import "./EditProductPage.scss";
+import "./EditProduct.scss";
 import ProductForm from "../../components/ProductForm/ProductForm";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const url = import.meta.env.VITE_API_URL;
-export default function EditProductPage({ jwtToken }) {
+export default function EditProduct({ jwtToken }) {
 	const { id } = useParams();
 	let navigate = useNavigate();
 

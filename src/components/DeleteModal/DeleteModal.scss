@@ -29,7 +29,6 @@
 	}
 
 	&__title {
-		font-weight: 600;
 		text-transform: none;
 	}
 
@@ -40,7 +39,7 @@
 		border: $component-border;
 		padding: 0.25rem 1rem;
 		border-radius: 1.125rem;
-		font-size: 0.875rem;
+		font-size: 1rem;
 
 		&:hover {
 			background-color: $secondary-pink;

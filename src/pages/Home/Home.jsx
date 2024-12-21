@@ -3,9 +3,9 @@ import inventorySticker from "../../assets/stickers/inventory.svg";
 import addSticker from "../../assets/stickers/addNew.svg";
 import wishlistSticker from "../../assets/stickers/wishlist.svg";
 import aboutSticker from "../../assets/stickers/about.svg";
-import "./HomePage.scss";
+import "./Home.scss";
 
-export default function HomePage() {
+export default function Home() {
 	return (
 		<main className="homepage">
 			<div className="homepage__sticker-container homepage__sticker-container--one">

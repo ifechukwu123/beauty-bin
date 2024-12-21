@@ -1,15 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import "./SignUpPage.scss";
 import axios from "axios";
+import "./Login.scss";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import UserForm from "../../components/UserForm/UserForm";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function SignUpPage() {
+export default function Login({ setJwtToken }) {
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState(null);
-
 	let navigate = useNavigate();
 
 	async function handleOnSubmit(values) {
@@ -18,30 +17,33 @@ export default function SignUpPage() {
 		const password = values.password.trim();
 
 		try {
-			await axios.post(`${url}/users/signUp`, {
+			const response = await axios.post(`${url}/users/login`, {
 				email,
 				password,
 			});
 			setSuccess(true);
+			setJwtToken(response.data.jwtToken);
+			localStorage.setItem("jwtToken", response.data.jwtToken);
 
 			setTimeout(() => {
-				navigate("/login");
+				navigate("/");
 			}, 1500);
 		} catch (error) {
-			if (error.response.status === 400) {
-				setError(error.response.data);
+			if (error.status === 404 || error.status === 401) {
+				setError(error.response.data.message);
 			}
-			console.error(`Unable to Sign Up User: ${error}`);
+
+			console.error(`Unable to log in user: ${error}`);
 		}
 	}
 
 	return (
-		<main className="signUp">
+		<main className="login">
 			<UserForm
 				handleOnSubmit={handleOnSubmit}
 				success={success}
 				error={error}
-				page="signUp"
+				page="login"
 			/>
 		</main>
 	);

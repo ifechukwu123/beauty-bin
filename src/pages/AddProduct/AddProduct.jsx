@@ -1,12 +1,12 @@
 import axios from "axios";
-import "./AddProductPage.scss";
+import "./AddProduct.scss";
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import ProductForm from "../../components/ProductForm/ProductForm";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function AddProductPage({ jwtToken }) {
+export default function AddProduct({ jwtToken }) {
 	let navigate = useNavigate();
 
 	async function handleOnSubmit(values) {

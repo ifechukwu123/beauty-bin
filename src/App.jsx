@@ -2,16 +2,16 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import HomePage from "./pages/HomePage/HomePage";
-import InventoryPage from "./pages/InventoryPage/InventoryPage";
-import ProductDetailsPage from "./pages/ProductDetailsPage/ProductDetailsPage";
-import AddProductPage from "./pages/AddProductPage/AddProductPage";
-import WishlistPage from "./pages/WishlistPage/WishlistPage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import EditProductPage from "./pages/EditProductPage/EditProductPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import Home from "./pages/Home/Home";
+import Inventory from "./pages/Inventory/Inventory";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import AddProduct from "./pages/AddProduct/AddProduct";
+import Wishlist from "./pages/Wishlist/Wishlist";
+import NotFound from "./pages/NotFound/NotFound";
+import About from "./pages/About/About";
+import EditProduct from "./pages/EditProduct/EditProduct";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 import { io } from "socket.io-client";
 
 const url = import.meta.env.VITE_API_URL;
@@ -43,29 +43,26 @@ function App() {
 			/>
 
 			<Routes>
-				<Route path="/" element={<HomePage />} />
+				<Route path="/" element={<Home />} />
 				<Route path="home" element={<Navigate to="/" />} />
-				<Route path="login" element={<LoginPage setJwtToken={setJwtToken} />} />
-				<Route path="signUp" element={<SignUpPage />} />
-				<Route
-					path="products"
-					element={<InventoryPage jwtToken={jwtToken} />}
-				/>
+				<Route path="login" element={<Login setJwtToken={setJwtToken} />} />
+				<Route path="signUp" element={<SignUp />} />
+				<Route path="products" element={<Inventory jwtToken={jwtToken} />} />
 				<Route
 					path="products/add"
-					element={<AddProductPage jwtToken={jwtToken} />}
+					element={<AddProduct jwtToken={jwtToken} />}
 				/>
 				<Route
 					path="products/:id"
-					element={<ProductDetailsPage jwtToken={jwtToken} />}
+					element={<ProductDetails jwtToken={jwtToken} />}
 				/>
 				<Route
 					path="products/:id/edit"
-					element={<EditProductPage jwtToken={jwtToken} />}
+					element={<EditProduct jwtToken={jwtToken} />}
 				/>
-				<Route path="wishlist" element={<WishlistPage jwtToken={jwtToken} />} />
-				<Route path="about" element={<AboutPage />} />
-				<Route path="*" element={<NotFoundPage />} />
+				<Route path="wishlist" element={<Wishlist jwtToken={jwtToken} />} />
+				<Route path="about" element={<About />} />
+				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
 	);

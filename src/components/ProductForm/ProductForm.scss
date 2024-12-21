@@ -29,8 +29,8 @@
 		&__label {
 			font-family: "TBJMaltaMiniEdition";
 			font-size: 1.5625rem;
-			width: 6.25rem;
-			text-transform: capitalize;
+			width: 7.8125rem;
+			text-transform: uppercase;
 		}
 
 		&__icon {
@@ -65,6 +65,7 @@
 			border-radius: 1.875rem;
 			padding: 0.3rem 1rem;
 			flex: 1;
+			font-size: 1rem;
 
 			&:active,
 			&:focus {
@@ -109,10 +110,11 @@
 			display: flex;
 			justify-content: center;
 			border-radius: 50%;
+			border: $component-border;
 
 			&--active {
 				padding: 0.5rem 1rem;
-				gap: 9.5px;
+				gap: 0.5938rem;
 				border-radius: 1.875rem;
 				width: unset;
 				height: unset;

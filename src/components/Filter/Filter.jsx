@@ -36,7 +36,7 @@ export default function Filter({
 			{statusFilter.length + categoryFilter.length > 0 && (
 				<div className="filter__reset" onClick={handleOnClick}>
 					{" "}
-					X Reset filters
+					x Reset filters
 				</div>
 			)}
 		</div>

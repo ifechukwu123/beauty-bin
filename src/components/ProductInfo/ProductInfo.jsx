@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./ProductDetails.scss";
+import "./ProductInfo.scss";
 import axios from "axios";
 import DeleteModal from "../DeleteModal/DeleteModal";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import backArrow from "../../assets/icons/arrow-left.svg";
 import editIcon from "../../assets/icons/pencil.svg";
 
 const url = import.meta.env.VITE_API_URL;
-export default function ProductDetails({ product, jwtToken }) {
+export default function ProductInfo({ product, jwtToken }) {
 	let navigate = useNavigate();
 	const [show, setShow] = useState(false);
 	const [inWishlist, setInWishlist] = useState(false);
@@ -115,27 +115,27 @@ export default function ProductDetails({ product, jwtToken }) {
 					</div>
 					<div className="productDetails__info-container">
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Name</h3>
+							<h3 className="productDetails__title">Name:</h3>
 							<span className="productDetails__description">{name}</span>
 						</div>
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Brand</h3>
+							<h3 className="productDetails__title">Brand:</h3>
 							<span className="productDetails__description">{brand}</span>
 						</div>
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Category</h3>
+							<h3 className="productDetails__title">Category:</h3>
 							<span className="productDetails__description">{category}</span>
 						</div>
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Batch Number</h3>
+							<h3 className="productDetails__title">Batch Number:</h3>
 							<span className="productDetails__description">{batchNumber}</span>
 						</div>
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Date Opened</h3>
+							<h3 className="productDetails__title">Date Opened:</h3>
 							<span className="productDetails__description">{dateOpened}</span>
 						</div>
 						<div className="productDetails__info">
-							<h3 className="productDetails__title">Expiration Date</h3>
+							<h3 className="productDetails__title">Expiration Date:</h3>
 							<span
 								className={`productDetails__description productDetails__description--${color}`}
 							>

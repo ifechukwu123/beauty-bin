@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import "./ProductDetailsPage.scss";
+import "./ProductDetails.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductDetails from "../../components/ProductDetails/ProductDetails";
+import ProductInfo from "../../components/ProductInfo/ProductInfo";
 import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
-export default function ProductDetailsPage({ jwtToken }) {
+export default function ProductDetails({ jwtToken }) {
 	const { id } = useParams();
 	const [product, setProduct] = useState([]);
 	const [fetched, setFetched] = useState(false);
@@ -45,7 +45,7 @@ export default function ProductDetailsPage({ jwtToken }) {
 		<main className="product-details">
 			<PageHeader title="Product Details" />
 			<div className="product-details__container">
-				<ProductDetails product={product} jwtToken={jwtToken} />
+				<ProductInfo product={product} jwtToken={jwtToken} />
 			</div>
 		</main>
 	);

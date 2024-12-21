@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./WishlistPage.scss";
+import "./Wishlist.scss";
 import axios from "axios";
 import WishItem from "../../components/WishItem/WishItem";
 import PageHeader from "../../components/PageHeader/PageHeader";
 
 const url = import.meta.env.VITE_API_URL;
 
-export default function WishlistPage({ jwtToken }) {
+export default function Wishlist({ jwtToken }) {
 	const [wishlist, setWishlist] = useState([]);
 	const [fetched, setFetched] = useState(false);
 	const [error, setError] = useState(null);
