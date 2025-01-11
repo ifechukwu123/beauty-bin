@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Wishlist.scss";
 import axios from "axios";
 import WishItem from "../../components/WishItem/WishItem";
@@ -11,6 +11,12 @@ export default function Wishlist({ jwtToken }) {
 	const [wishlist, setWishlist] = useState([]);
 	const [fetched, setFetched] = useState(false);
 	const [error, setError] = useState(null);
+
+	let navigate = useNavigate();
+
+	const handleSignIn = () => {
+		navigate("/login");
+	};
 
 	const getWishList = async () => {
 		try {
@@ -39,24 +45,35 @@ export default function Wishlist({ jwtToken }) {
 	return (
 		<main className="wishlist">
 			<PageHeader title="wishlist" />
-			{error ? (
-				<div>
-					<Link to="/login">Log in</Link> or <Link to="/signUp">Sign up </Link>
-					to see products
-				</div>
-			) : (
-				<ul className="wishlist__list">
-					{wishlist.map((wish) => (
-						<li key={wish.id} className="wishlist__item">
-							<WishItem
-								wishlistItem={wish}
-								getWishList={getWishList}
-								jwtToken={jwtToken}
-							/>
-						</li>
-					))}
-				</ul>
-			)}
+			<div className="wishlist-wrapper">
+				{error ? (
+					<div className="wishlist__error">
+						<p className="wishlist__error-message">
+							{" "}
+							<span className="wishlist__error--bold">
+								You need to login to see this page.
+							</span>{" "}
+							<br />
+							Login to view all the saved items in your wishlist.
+						</p>
+						<button className="wishlist__error-button" onClick={handleSignIn}>
+							Login
+						</button>
+					</div>
+				) : (
+					<ul className="wishlist__list">
+						{wishlist.map((wish) => (
+							<li key={wish.id} className="wishlist__item">
+								<WishItem
+									wishlistItem={wish}
+									getWishList={getWishList}
+									jwtToken={jwtToken}
+								/>
+							</li>
+						))}
+					</ul>
+				)}
+			</div>
 		</main>
 	);
 }

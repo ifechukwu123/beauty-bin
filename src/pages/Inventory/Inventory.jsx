@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Inventory.scss";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
@@ -15,6 +15,12 @@ export default function Inventory({ jwtToken }) {
 	const [statusFilter, setStatusFilter] = useState([]);
 	const [categoryFilter, setCategoryFilter] = useState([]);
 	const [error, setError] = useState(null);
+
+	let navigate = useNavigate();
+
+	const handleSignIn = () => {
+		navigate("/login");
+	};
 
 	const getProductsCategories = async () => {
 		try {
@@ -74,16 +80,18 @@ export default function Inventory({ jwtToken }) {
 					setCategoryFilter={setCategoryFilter}
 				/>
 				{error ? (
-					<div>
-						<h2>You have to sign in to see this page.</h2>
-						<p>
-							Sign in and discover a new way to organize all your online and
-							in-store purchases.
+					<div className="products__error">
+						<p className="products__error-message">
+							{" "}
+							<span className="products__error--bold">
+								You need to login to see this page.
+							</span>{" "}
+							<br />
+							Login to view all your online and in-store purchases.
 						</p>
-						<button>Login</button>
-						<Link to="/login">Log in</Link> or{" "}
-						<Link to="/signUp">Sign up </Link>
-						to see products
+						<button className="products__error-button" onClick={handleSignIn}>
+							Login
+						</button>
 					</div>
 				) : (
 					<ProductList productList={filteredProductList} />
