@@ -1,10 +1,19 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography";
+@use "../../styles/partials/mixins" as *;
 
 .header {
 	background-color: $primary-pink;
 	border-bottom: $separator-border;
-	padding: 0.5rem $desktop-padding;
+	padding: 0.5rem $padding;
+
+	@include tablet {
+		padding: 0.5rem $tablet-padding;
+	}
+
+	@include desktop {
+		padding: 0.5rem $desktop-padding;
+	}
 
 	&--white {
 		background-color: $primary-white;
@@ -43,6 +52,17 @@
 			padding: 0;
 			margin: 0;
 			list-style-type: none;
+		}
+
+		&__item {
+			&--wishlist,
+			&--profile {
+				display: none;
+
+				@include tablet {
+					display: list-item;
+				}
+			}
 		}
 
 		&__icon-wrapper {

@@ -58,7 +58,7 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 					<span className="nav__logo">Beauty Bin</span>
 				</Link>
 				<ul className="nav__list">
-					<li className="nav__item">
+					<li className="nav__item nav__item--wishlist">
 						<Link to="/wishlist" className="nav__link nav__link--star">
 							<div className="nav__icon-wrapper">
 								<img
@@ -82,7 +82,7 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 						{count}
 					</li>
 
-					<li className="nav__item">
+					<li className="nav__item nav__item--profile">
 						<div className="nav__icon-wrapper" onClick={handleProfileOpen}>
 							<img
 								src={avatar}

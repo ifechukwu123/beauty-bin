@@ -1,7 +1,7 @@
 //Colors
 $primary-white: #fffdfd;
 $primary-pink: #fdbad8;
-//$primary-pink: #fbc1d4;
+//$primary-pink: #fbc1d4; //original
 $primary-black: #282828;
 //$primary-black: #1e1e1e  //original
 $secondary-pink: #ff7ec4;
@@ -17,8 +17,14 @@ $status-orange: #f79009;
 //font-size
 $h1-font-size: 2.1875rem;
 
+//screen sizes
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
 //padding
-$desktop-padding: 3.125rem;
+$padding: 1rem;
+$tablet-padding: 2rem;
+$desktop-padding: 3rem;
 
 //borders
 $separator-border: 1.5px solid $primary-black;
