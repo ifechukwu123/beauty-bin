@@ -13,7 +13,13 @@ export default function DeleteModal({
 	}
 
 	return (
-		<div className="deleteModal">
+		<div
+			className="deleteModal"
+			role="dialog"
+			aria-labelledby="dialogTitle"
+			aria-describedby="dialog1Desc"
+		>
+			{/* It is important for developers to ensure that content outside of the modal dialog is inaccessible to all users while the modal dialog is active. */}
 			<div className="deleteModal-container">
 				<img
 					src={cancelIcon}
@@ -22,8 +28,10 @@ export default function DeleteModal({
 					onClick={handleClose}
 				/>
 				<div className="deleteModal-content">
-					<h1 className="deleteModal__title">Delete {name}?</h1>
-					<p className="deleteModal__description">
+					<h1 id="dialogTitle" className="deleteModal__title">
+						Delete {name}?
+					</h1>
+					<p id="dialog1Desc" className="deleteModal__description">
 						Please confirm that you&apos;d like to delete {name} from your{" "}
 						{type === "inventory" ? "inventory" : "wishlist"}. You won&apos;t be
 						able to undo this action.

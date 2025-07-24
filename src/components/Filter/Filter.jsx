@@ -19,7 +19,7 @@ export default function Filter({
 		setCategoryFilter([]);
 	}
 	return (
-		<aside className="filter">
+		<div className="filter">
 			<FilterItems
 				name="category"
 				content={categories}
@@ -39,6 +39,6 @@ export default function Filter({
 					x Reset filters
 				</div>
 			)}
-		</aside>
+		</div>
 	);
 }

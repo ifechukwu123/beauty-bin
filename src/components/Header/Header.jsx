@@ -2,8 +2,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import menuIcon from "../../assets/icons/menu.svg";
 import starIcon from "../../assets/icons/star.svg";
 import bellIcon from "../../assets/icons/bell.svg";
-import sunIcon from "../../assets/icons/sun.svg";
-import moonIcon from "../../assets/icons/night.svg";
 import avatar from "../../assets/icons/user-female.svg";
 import "./Header.scss";
 import { useEffect, useState } from "react";
@@ -14,7 +12,6 @@ const url = import.meta.env.VITE_API_URL;
 export default function Header({ count, content, jwtToken, setJwtToken }) {
 	let navigate = useNavigate();
 
-	const [theme, setTheme] = useState("light");
 	const [profileOpen, setProfileOpen] = useState(false);
 	const [user, setUser] = useState(null);
 
@@ -27,22 +24,9 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 			? "header"
 			: "header header--white";
 
-	function handleSetMood() {
-		const selectedTheme = theme === "light" ? "dark" : "light";
-		setTheme(selectedTheme);
-		localStorage.setItem("theme", selectedTheme);
-	}
-
 	function handleProfileOpen() {
 		setProfileOpen(!profileOpen);
 	}
-
-	useEffect(() => {
-		let themeLocal = localStorage.getItem("theme");
-		if (themeLocal) {
-			setTheme(themeLocal);
-		}
-	}, []);
 
 	useEffect(() => {
 		async function getUserProfile() {
@@ -96,24 +80,6 @@ export default function Header({ count, content, jwtToken, setJwtToken }) {
 							<div className="nav__notification-status"></div>
 						</div>
 						{count}
-					</li>
-
-					<li className="nav__item" onClick={handleSetMood}>
-						<div className="nav__icon-wrapper">
-							{theme === "light" ? (
-								<img
-									src={sunIcon}
-									alt="An icon of a sun"
-									className="nav__icon nav__icon--sun"
-								/>
-							) : (
-								<img
-									src={moonIcon}
-									alt="An icon of a moon"
-									className="nav__icon nav__icon--moon"
-								/>
-							)}
-						</div>
 					</li>
 
 					<li className="nav__item">
