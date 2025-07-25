@@ -48,10 +48,14 @@
 
 		&__list {
 			display: flex;
-			gap: 2.5rem;
+			gap: 1rem;
 			padding: 0;
 			margin: 0;
 			list-style-type: none;
+
+			@include desktop {
+				gap: 2.5rem;
+			}
 		}
 
 		&__item {

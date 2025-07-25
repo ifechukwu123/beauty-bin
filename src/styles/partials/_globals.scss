@@ -5,10 +5,8 @@
 	box-sizing: border-box;
 	font-family: "BodoniModa"; //add backup serif font
 	color: $primary-black;
-}
-
-body {
 	margin: 0;
+	padding: 0;
 }
 
 h1 {
@@ -16,5 +14,4 @@ h1 {
 	font-size: $h1-font-size;
 	text-transform: uppercase;
 	font-weight: 600;
-	margin: 0;
 }

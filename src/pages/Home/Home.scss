@@ -1,4 +1,5 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .homepage {
 	background-color: $primary-pink;
@@ -7,7 +8,6 @@
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	padding: 6.25rem;
 
 	&__slogan {
 		display: flex;
@@ -16,23 +16,42 @@
 
 		&-title {
 			font-family: "BodoniModa";
-			font-size: 2.5rem;
+			font-size: 2.25rem;
+
+			@include tablet {
+				font-size: 2.75rem;
+			}
+
+			@include desktop {
+				font-size: 3.5rem;
+			}
 
 			&--accent {
-				text-transform: capitalize;
 				font-family: "ImperialScript";
+				text-transform: capitalize;
 				display: block;
 				color: $secondary-light-green;
-				font-size: 3.75rem;
+				font-size: 3.5rem;
 				position: relative;
-				top: -2.5rem;
+				top: -2.3rem;
+
+				@include tablet {
+					font-size: 4rem;
+					top: -2.9rem;
+				}
+
+				@include desktop {
+					font-size: 5.5rem;
+					top: -3.75rem;
+				}
 			}
 		}
 	}
 
 	&__link {
-		text-decoration: none;
-		color: $primary-black;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&:hover {
 			.homepage__sticker {
@@ -43,85 +62,114 @@
 
 	&__sticker-container {
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		gap: 3.125rem;
-
-		&--one {
-			left: 0.625rem;
-		}
-
-		&--two {
-			right: 0.625rem;
-		}
+		inset: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
 
 	&__sticker-wrapper {
 		position: relative;
+		width: clamp(9.375rem, 40vw, 16.25rem);
 
-		&--inventory {
-			left: 9.375rem;
-			top: 0.625rem;
+		&--products {
+			top: -10%;
+			left: -5%;
+
+			@include tablet {
+				top: -8%;
+				left: -7%;
+			}
+
+			@include desktop {
+				left: -20%;
+			}
 		}
 
 		&--wishlist {
-			left: 7.5rem;
-			bottom: 0.625rem;
+			top: -20%;
+			left: 5%;
+
+			@include tablet {
+				top: -5%;
+				left: -5%;
+			}
+
+			@include desktop {
+				top: -15%;
+			}
+		}
+
+		&--add {
+			left: -10%;
+			bottom: -5%;
+
+			@include tablet {
+				left: 8%;
+			}
+
+			@include desktop {
+				left: 15%;
+			}
 		}
 
 		&--about {
-			right: 6.25rem;
-		}
-		&--add {
-			right: 3.125rem;
-			top: 0.625rem;
+			width: clamp(10.625rem, 45vw, 18.125rem);
+			top: 5%;
+
+			@include tablet {
+				left: 5%;
+				top: 8%;
+			}
+
+			@include desktop {
+				top: 15%;
+			}
 		}
 	}
 
 	&__sticker-text {
 		font-family: "TBJMaltaMiniEdition";
 		text-transform: uppercase;
-		font-size: 2.5rem;
+		font-size: clamp(1.25rem, 5.5vw, 2.25rem);
+		font-weight: 600;
 		position: absolute;
 		display: block;
 		top: 40%;
 
-		&--inventory {
+		&--products {
 			transform: rotate(-25deg);
 			top: 35%;
-			left: 25%;
+			left: 27%;
 		}
 
 		&--wishlist {
 			transform: rotate(13deg);
-			left: 28%;
-			top: 44%;
+			left: 27%;
+			top: 43%;
 		}
 
 		&--add {
-			transform: rotate(25deg);
-			left: 22%;
+			transform: rotate(20deg);
+			left: 28%;
+
+			@include tablet {
+				top: 42%;
+			}
 		}
 
 		&--about {
-			left: 38%;
+			left: 35%;
 			transform: rotate(-5deg);
 		}
 	}
 
 	&__sticker {
-		width: 16.25rem;
-
-		&--about {
-			width: 20rem;
-		}
+		width: 100%;
+		height: auto;
 
 		&--wishlist {
-			transform: rotate(5deg);
-			width: 17.5rem;
+			transform: rotate(6deg);
 		}
 	}
 }
