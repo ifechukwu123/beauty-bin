@@ -1,40 +1,63 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .notFound {
 	flex: 1;
-	padding: $desktop-padding 0;
+	padding: 0 $padding;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include tablet {
+		padding: 0 $tablet-padding;
+	}
+
+	@include desktop {
+		padding: 0 $desktop-padding;
+	}
 
 	&-container {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin-top: 5rem;
-		gap: 1.25rem;
 	}
 
 	&__status {
 		display: flex;
+		align-items: baseline;
 		gap: 0.625rem;
-		margin-top: -4.1875rem;
 	}
 
 	&__status-text {
 		display: block;
 		font-family: "TBJMaltaMiniEdition";
 		font-weight: 800;
-		margin-top: 3.125rem;
-		font-size: 18.75rem;
+		font-size: 12.5rem;
+
+		@include tablet {
+			font-size: 18.75rem;
+		}
 	}
 
 	&__icon {
-		width: 12.5rem;
+		width: 8.75rem;
+
+		@include tablet {
+			width: 12.5rem;
+		}
 	}
 
 	&__message {
-		font-size: 1.25rem;
-		margin-top: -3.125rem;
+		font-size: 1rem;
+		margin-top: -1rem;
+		text-align: center;
+
+		@include tablet {
+			font-size: 1.25rem;
+			margin-top: -2rem;
+		}
 	}
 
 	&__button {
