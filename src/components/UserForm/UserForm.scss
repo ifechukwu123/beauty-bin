@@ -1,39 +1,58 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography";
+@use "../../styles/partials/mixins" as *;
 
 .userForm-container {
 	border: $separator-border;
 	width: 100%;
+	max-width: 31.25rem;
 	display: flex;
+	flex-direction: column;
 	position: relative;
-	margin: -5rem 0 0 -3.875rem;
+
+	@include tablet {
+		flex-direction: row;
+		max-width: 40rem;
+	}
 
 	.userForm__image-wrapper {
 		background-color: $primary-pink;
-		width: 3.875rem;
-		border-right: $separator-border;
+		height: 3.875rem;
+		border-bottom: $separator-border;
+
+		@include tablet {
+			height: unset;
+			width: 3.875rem;
+			border-bottom: 0;
+			border-right: $separator-border;
+		}
 	}
 
 	.userForm__form-container {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
 		align-items: center;
-		padding: 3.125rem;
+		padding: 3rem 1.5rem;
 		gap: 1.5rem;
+
+		@include tablet {
+			padding: 3rem;
+		}
 	}
 
 	.userForm {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
+		width: 100%;
+		max-width: 21.875rem;
 
 		&__field {
-			border: 1.5px solid $primary-black;
+			border: $separator-border;
 			border-radius: 1.875rem;
 			padding: 0.5rem 1rem;
-			width: 21.875rem;
+			width: 100%;
 			font-size: 1rem;
 
 			&:active,
@@ -65,31 +84,23 @@
 			align-items: center;
 			gap: 0.625rem;
 			padding: 0.5rem;
+			border: 0.5px solid $primary-white;
+			border-radius: 1.875rem;
 
 			&:hover {
-				border: 0.5px solid $secondary-ash;
-				border-radius: 1.875rem;
+				border-color: $secondary-ash;
 			}
 
 			&-name {
 				color: $secondary-ash;
 				font-family: "TBJMaltaMiniEdition";
-				font-size: 1.5rem;
+				font-weight: 600;
+				font-size: 1.25rem;
 				margin-top: 4px;
-			}
-		}
 
-		&__icon-wrapper {
-			display: flex;
-			justify-content: center;
-			width: 2.7188rem;
-			height: 2.7188rem;
-			border-radius: 50%;
-			background-color: $primary-pink;
-			border: $separator-border;
-
-			&:hover {
-				background-color: $secondary-pink;
+				@include tablet {
+					font-size: 1.5rem;
+				}
 			}
 		}
 
@@ -102,11 +113,17 @@
 		}
 
 		&__button {
-			border: none;
-			background-color: $primary-white;
-			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 2.7188rem;
+			height: 2.7188rem;
+			border-radius: 50%;
+			background-color: $primary-pink;
+			border: $separator-border;
 
 			&:hover {
+				background-color: $secondary-pink;
 				cursor: pointer;
 			}
 		}

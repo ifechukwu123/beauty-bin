@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 @use "./typography";
 
 * {
@@ -14,4 +15,8 @@ h1 {
 	font-size: $h1-font-size;
 	text-transform: uppercase;
 	font-weight: 600;
+
+	@include tablet {
+		font-size: $tablet-h1-font-size;
+	}
 }

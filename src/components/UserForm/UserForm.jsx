@@ -84,13 +84,11 @@ export default function UserForm({ handleOnSubmit, success, error, page }) {
 									</span>
 								</Link>
 								<button type="submit" className="userForm__button">
-									<div className="userForm__icon-wrapper">
-										<img
-											src={arrowRight}
-											alt="An icon of a right arrow"
-											className="userForm__icon"
-										/>
-									</div>
+									<img
+										src={arrowRight}
+										alt="An icon of a right arrow"
+										className="userForm__icon"
+									/>
 								</button>
 							</div>
 						</form>
