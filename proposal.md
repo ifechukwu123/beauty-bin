@@ -60,7 +60,7 @@ Not sure yet :confounded:
 - Home page : Main landing page of the app introducing features
 - Bin page: Page displaying expired or soon-to-be expired products
 - Add Product page : includes a form to collect details about a product
-- Inventory page : Displays all user's makeup products
+- Products page : Displays all user's makeup products
 - Product details page : Displays information about a specific product
 - WishList page : Displays products the user wants to get
 
@@ -78,7 +78,7 @@ Not sure yet :confounded:
 
 ![](/src/assets/images/addProductPage.png)
 
-#### Inventory Page
+#### Products Page
 
 ![](/src/assets/images/inventoryPage.png)
 

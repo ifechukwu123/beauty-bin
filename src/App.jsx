@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import Inventory from "./pages/Inventory/Inventory";
+import Products from "./pages/Products/Products";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import AddProduct from "./pages/AddProduct/AddProduct";
 import Wishlist from "./pages/Wishlist/Wishlist";
@@ -47,7 +47,7 @@ function App() {
 				<Route path="home" element={<Navigate to="/" />} />
 				<Route path="login" element={<Login setJwtToken={setJwtToken} />} />
 				<Route path="signUp" element={<SignUp />} />
-				<Route path="products" element={<Inventory jwtToken={jwtToken} />} />
+				<Route path="products" element={<Products jwtToken={jwtToken} />} />
 				<Route
 					path="products/add"
 					element={<AddProduct jwtToken={jwtToken} />}

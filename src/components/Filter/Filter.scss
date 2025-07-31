@@ -1,17 +1,33 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .filter {
-	border-right: $separator-border;
+	border-bottom: $separator-border;
+
+	@include tablet {
+		border-bottom: none;
+		border-right: $separator-border;
+	}
 
 	&__reset {
-		margin-top: 0.625rem;
-		padding-left: $desktop-padding;
+		border: 0;
+		background-color: transparent;
+		padding: $padding;
 		font-family: "TBJMaltaMiniEdition";
-		font-size: 1.5625rem;
+		font-size: 1.375rem;
 		color: $secondary-pink;
 
 		&:hover {
 			cursor: pointer;
+		}
+
+		@include tablet {
+			padding-left: $tablet-padding;
+			font-size: 1.5625rem;
+		}
+
+		@include desktop {
+			padding-left: $desktop-padding;
 		}
 	}
 }

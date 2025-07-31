@@ -1,6 +1,5 @@
 import "./FilterItems.scss";
 import downArrow from "../../assets/icons/arrow-single-down.svg";
-import upArrow from "../../assets/icons/arrow-single-up.svg";
 import { useState } from "react";
 
 export default function FilterItems({ name, content, setSelected, selected }) {
@@ -23,20 +22,14 @@ export default function FilterItems({ name, content, setSelected, selected }) {
 	return (
 		<article className="filter-card">
 			<div className="filter-card__header" onClick={handleOnClick}>
-				<h2 className="filter-card__name">{name}</h2>
-				{expanded === true ? (
-					<img
-						src={downArrow}
-						alt="A down arrow icon"
-						className="filter-card__icon"
-					/>
-				) : (
-					<img
-						src={upArrow}
-						alt="An up arrow icon"
-						className="filter-card__icon"
-					/>
-				)}
+				<span className="filter-card__name">{name}</span>
+				<img
+					src={downArrow}
+					alt="A down arrow icon"
+					className={`filter-card__icon ${
+						expanded === true && "filter-card__icon--flip"
+					}`}
+				/>
 			</div>
 			{expanded && (
 				<ul className="filter-card__list">
