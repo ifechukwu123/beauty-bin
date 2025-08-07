@@ -45,22 +45,22 @@ export default function Wishlist({ jwtToken }) {
 	return (
 		<main className="wishlist">
 			<PageHeader title="wishlist" />
-			<div className="wishlist-wrapper">
-				{error ? (
-					<div className="wishlist__error">
-						<p className="wishlist__error-message">
-							{" "}
-							<span className="wishlist__error--bold">
-								You need to login to see this page.
-							</span>{" "}
-							<br />
-							Login to view all the saved items in your wishlist.
-						</p>
-						<button className="wishlist__error-button" onClick={handleSignIn}>
-							Login
-						</button>
-					</div>
-				) : (
+			{error ? (
+				<div className="wishlist__error">
+					<p className="wishlist__error-message">
+						{" "}
+						<span className="wishlist__error--bold">
+							You need to login to see this page.
+						</span>{" "}
+						<br />
+						Login to view all the saved items in your wishlist.
+					</p>
+					<button className="wishlist__error-button" onClick={handleSignIn}>
+						Login
+					</button>
+				</div>
+			) : (
+				<div className="wishlist-wrapper">
 					<ul className="wishlist__list">
 						{wishlist.map((wish) => (
 							<li key={wish.id} className="wishlist__item">
@@ -72,8 +72,8 @@ export default function Wishlist({ jwtToken }) {
 							</li>
 						))}
 					</ul>
-				)}
-			</div>
+				</div>
+			)}
 		</main>
 	);
 }

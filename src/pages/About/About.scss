@@ -2,6 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .about {
-	padding-top: $header-height;
+	padding-top: $header-height; //accommodate for header
 	min-height: 100vh;
+	background-color: $primary-white; //change to pink when there is content
 }
