@@ -4,11 +4,6 @@
 .filter-card {
 	border-bottom: 1.5px solid $secondary-grey;
 
-	@include tablet {
-		width: 20vw;
-		min-width: min-content;
-	}
-
 	&__header {
 		display: flex;
 		justify-content: space-between;

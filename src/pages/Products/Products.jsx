@@ -22,26 +22,26 @@ export default function Products({ jwtToken }) {
 		navigate("/login");
 	};
 
-	const getProductsCategories = async () => {
-		try {
-			const response = await axios.get(`${url}/categories`);
-			setCategories(response.data);
-
-			const products = await axios.get(`${url}/products`, {
-				headers: { Authorization: `Bearer ${jwtToken}` },
-			});
-			setProductList(products.data);
-			setFetched(true);
-		} catch (error) {
-			if (error.status === 400 || error.status === 401) {
-				setError(true);
-				setFetched(true);
-			}
-			console.error(`Unable to retrieve products & categories: ${error}`);
-		}
-	};
-
 	useEffect(() => {
+		const getProductsCategories = async () => {
+			try {
+				const response = await axios.get(`${url}/categories`);
+				setCategories(response.data);
+
+				const products = await axios.get(`${url}/products`, {
+					headers: { Authorization: `Bearer ${jwtToken}` },
+				});
+				setProductList(products.data);
+				setFetched(true);
+			} catch (error) {
+				if (error.status === 400 || error.status === 401) {
+					setError(true);
+					setFetched(true);
+				}
+				console.error(`Unable to retrieve products & categories: ${error}`);
+			}
+		};
+
 		getProductsCategories();
 	}, []);
 

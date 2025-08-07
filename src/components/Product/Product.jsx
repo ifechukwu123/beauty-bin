@@ -19,7 +19,7 @@ export default function Product({ product }) {
 				/>
 				<div className="product-card__info">
 					<h2 className="product-card__name">{name}</h2>
-					<span className="product-card__brand">{brand}</span>
+					<h3 className="product-card__brand">{brand}</h3>
 				</div>
 			</div>
 			<Link to={`/products/${id}`} className="product-card__link">

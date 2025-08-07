@@ -5,6 +5,8 @@
 	border-bottom: $separator-border;
 
 	@include tablet {
+		flex: 0.2;
+		flex-shrink: 0;
 		border-bottom: none;
 		border-right: $separator-border;
 	}
