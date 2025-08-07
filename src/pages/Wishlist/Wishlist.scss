@@ -1,7 +1,8 @@
 @use "../../styles/partials/variables" as *;
 
 .wishlist {
-	flex: 1;
+	padding-top: $header-height;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 

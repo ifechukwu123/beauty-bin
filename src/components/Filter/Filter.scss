@@ -11,6 +11,14 @@
 		border-right: $separator-border;
 	}
 
+	&-wrapper {
+		@include tablet {
+			position: sticky;
+			top: $header-height;
+			will-change: transform;
+		}
+	}
+
 	&__reset {
 		border: 0;
 		background-color: transparent;

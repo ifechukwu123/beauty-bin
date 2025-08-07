@@ -11,8 +11,6 @@
 	@include tablet {
 		padding: 1.25rem $tablet-padding;
 		flex: 0.8;
-		max-height: 90vh;
-		overflow-y: auto;
 	}
 
 	@include desktop {

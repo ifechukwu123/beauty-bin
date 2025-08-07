@@ -1,4 +1,10 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .product-details {
+	padding-top: $header-height;
+	min-height: 100vh;
+
 	&__container {
 		padding: 3.125rem 12.5rem;
 	}

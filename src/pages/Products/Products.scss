@@ -2,7 +2,8 @@
 @use "../../styles/partials/mixins" as *;
 
 .products {
-	flex: 1;
+	min-height: 100vh;
+	padding-top: $header-height;
 	display: flex;
 	flex-direction: column;
 

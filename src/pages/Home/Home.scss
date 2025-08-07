@@ -2,8 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .homepage {
+	padding-top: $header-height;
+	min-height: 100vh;
 	background-color: $primary-pink;
-	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -73,11 +74,10 @@
 		width: clamp(9.375rem, 40vw, 16.25rem);
 
 		&--products {
-			top: -10%;
-			left: -5%;
+			top: 0;
+			left: 0%;
 
 			@include tablet {
-				top: -8%;
 				left: -7%;
 			}
 
@@ -87,7 +87,7 @@
 		}
 
 		&--wishlist {
-			top: -20%;
+			top: -8%;
 			left: 5%;
 
 			@include tablet {
@@ -97,19 +97,20 @@
 
 			@include desktop {
 				top: -15%;
+				left: -10%;
 			}
 		}
 
 		&--add {
-			left: -10%;
-			bottom: -5%;
+			right: 5%;
+			bottom: -15%;
 
 			@include tablet {
-				left: 8%;
+				right: -8%;
 			}
 
 			@include desktop {
-				left: 15%;
+				right: -15%;
 			}
 		}
 

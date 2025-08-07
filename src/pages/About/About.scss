@@ -1,0 +1,7 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.about {
+	padding-top: $header-height;
+	min-height: 100vh;
+}

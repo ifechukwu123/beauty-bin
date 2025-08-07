@@ -6,6 +6,10 @@
 	background-color: $primary-pink;
 	border-bottom: $separator-border;
 	padding: 0.5rem $padding;
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 500;
+	will-change: transform;
 
 	@include tablet {
 		padding: 0.5rem $tablet-padding;
