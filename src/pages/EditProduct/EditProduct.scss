@@ -5,9 +5,6 @@
 	padding-top: $header-height; //accommodate for header
 	min-height: 100vh;
 	background-color: $primary-pink;
-
-	&__form-container {
-		background-color: $primary-white;
-		padding: 3.125rem 18.75rem;
-	}
+	display: flex;
+	flex-direction: column;
 }

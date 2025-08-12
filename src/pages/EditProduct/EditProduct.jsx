@@ -68,13 +68,11 @@ export default function EditProduct({ jwtToken }) {
 	return (
 		<main className="editProduct">
 			<PageHeader title="edit product" />
-			<div className="editProduct__form-container">
-				<ProductForm
-					handleOnSubmit={handleOnSubmit}
-					product={newProduct}
-					page="edit"
-				/>
-			</div>
+			<ProductForm
+				handleOnSubmit={handleOnSubmit}
+				product={newProduct}
+				page="edit"
+			/>
 		</main>
 	);
 }

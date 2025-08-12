@@ -35,13 +35,11 @@ export default function AddProduct({ jwtToken }) {
 	return (
 		<main className="addProduct">
 			<PageHeader title="add a new product" />
-			<div className="addProduct__form-container">
-				<ProductForm
-					handleOnSubmit={handleOnSubmit}
-					product={product}
-					page="add"
-				/>
-			</div>
+			<ProductForm
+				handleOnSubmit={handleOnSubmit}
+				product={product}
+				page="add"
+			/>
 		</main>
 	);
 }

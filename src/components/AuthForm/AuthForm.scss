@@ -2,7 +2,7 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/mixins" as *;
 
-.userForm-container {
+.authForm-container {
 	border: $separator-border;
 	width: 100%;
 	max-width: 31.25rem;
@@ -15,7 +15,7 @@
 		max-width: 40rem;
 	}
 
-	.userForm__image-wrapper {
+	.authForm__image-wrapper {
 		background-color: $primary-pink;
 		height: 3.875rem;
 		border-bottom: $separator-border;
@@ -28,7 +28,7 @@
 		}
 	}
 
-	.userForm__form-container {
+	.authForm__form-container {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -41,7 +41,7 @@
 		}
 	}
 
-	.userForm {
+	.authForm {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;

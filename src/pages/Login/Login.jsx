@@ -2,7 +2,7 @@ import axios from "axios";
 import "./Login.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserForm from "../../components/UserForm/UserForm";
+import AuthForm from "../../components/AuthForm/AuthForm";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -39,7 +39,7 @@ export default function Login({ setJwtToken }) {
 
 	return (
 		<main className="login">
-			<UserForm
+			<AuthForm
 				handleOnSubmit={handleOnSubmit}
 				success={success}
 				error={error}

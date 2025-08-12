@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./SignUp.scss";
 import axios from "axios";
 import { useState } from "react";
-import UserForm from "../../components/UserForm/UserForm";
+import AuthForm from "../../components/AuthForm/AuthForm";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -37,7 +37,7 @@ export default function SignUp() {
 
 	return (
 		<main className="signUp">
-			<UserForm
+			<AuthForm
 				handleOnSubmit={handleOnSubmit}
 				success={success}
 				error={error}
