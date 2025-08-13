@@ -29,7 +29,7 @@ export default function DeleteModal({
 				/>
 				<div className="deleteModal-content">
 					<h1 id="dialogTitle" className="deleteModal__title">
-						Delete {name}?
+						Delete <span>{name}</span>?
 					</h1>
 					<p id="dialog1Desc" className="deleteModal__description">
 						Please confirm that you&apos;d like to delete {name} from your{" "}

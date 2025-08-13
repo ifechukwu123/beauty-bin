@@ -33,6 +33,12 @@
 
 	&__title {
 		text-transform: none;
+
+		span {
+			font-style: italic;
+			font-family: inherit;
+			font-size: inherit;
+		}
 	}
 
 	&__button {

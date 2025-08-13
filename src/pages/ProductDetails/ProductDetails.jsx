@@ -13,27 +13,27 @@ export default function ProductDetails({ jwtToken }) {
 
 	let navigate = useNavigate();
 
-	const getProductDetails = async () => {
-		try {
-			const response = await axios.get(`${url}/products/${id}`, {
-				headers: { Authorization: `Bearer ${jwtToken}` },
-			});
-			setProduct(response.data);
-			setFetched(true);
-		} catch (error) {
-			if (error.status === 404) {
-				navigate("/notFound");
-			}
-			if (error.status === 400 || error.status === 401) {
-				navigate("/login");
-			}
-			console.error(
-				`Unable to retrieve details for product with id ${id}: ${error}`
-			);
-		}
-	};
-
 	useEffect(() => {
+		const getProductDetails = async () => {
+			try {
+				const response = await axios.get(`${url}/products/${id}`, {
+					headers: { Authorization: `Bearer ${jwtToken}` },
+				});
+				setProduct(response.data);
+				setFetched(true);
+			} catch (error) {
+				if (error.status === 404) {
+					navigate("/notFound");
+				}
+				if (error.status === 400 || error.status === 401) {
+					navigate("/login");
+				}
+				console.error(
+					`Unable to retrieve details for product with id ${id}: ${error}`
+				);
+			}
+		};
+
 		getProductDetails();
 	}, []);
 

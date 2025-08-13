@@ -5,9 +5,19 @@
 	padding-top: $header-height; //accommodate for header
 	min-height: 100vh;
 	background-color: $primary-pink;
+	display: flex;
+	flex-direction: column;
 
 	&__container {
+		flex: 1;
 		background-color: $primary-white;
-		padding: 3.125rem 12.5rem;
+		padding: 3.5rem $padding;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include tablet {
+			padding: 3.5rem $tablet-padding;
+		}
 	}
 }
