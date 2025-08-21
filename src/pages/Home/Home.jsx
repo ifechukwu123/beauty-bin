@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import productsSticker from "../../assets/stickers/Products.svg";
-import addSticker from "../../assets/stickers/addNew.svg";
-import wishlistSticker from "../../assets/stickers/wishlist.svg";
-import aboutSticker from "../../assets/stickers/about.svg";
+import addSticker from "../../assets/stickers/AddNew.svg";
+import wishlistSticker from "../../assets/stickers/Wishlist.svg";
+import aboutSticker from "../../assets/stickers/About.svg";
 import "./Home.scss";
 
 export default function Home() {
